@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Award, Users, Target, History } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import machiningPart1 from "@/assets/machining-part-1.jpg";
 
 const milestones = [
   { year: "2000", event: "Humpal Design Support founded in Silicon Valley" },
@@ -89,13 +90,11 @@ const About = () => {
               className="relative"
             >
               <div className="aspect-[4/3] bg-card rounded-2xl border border-border overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-8xl font-bold text-gradient mb-4">26</div>
-                    <p className="text-2xl font-semibold text-foreground">Years of Excellence</p>
-                    <p className="text-muted-foreground mt-2">Est. 2000</p>
-                  </div>
-                </div>
+                <img 
+                  src={machiningPart1} 
+                  alt="Precision machined part" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </motion.div>
           </div>
