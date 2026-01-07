@@ -26,9 +26,9 @@
     --primary: 210 50% 50%;
     --primary-foreground: 0 0% 98%;
 
-    /* Secondary - warm amber for CTAs */
-    --secondary: 35 90% 50%;
-    --secondary-foreground: 0 0% 5%;
+    /* Secondary - steel blue for CTAs */
+    --secondary: 210 45% 45%;
+    --secondary-foreground: 0 0% 98%;
 
     /* Muted elements */
     --muted: 0 0% 10%;
@@ -61,7 +61,7 @@
 
     /* Custom design tokens */
     --gradient-primary: linear-gradient(135deg, hsl(210 50% 50%) 0%, hsl(210 60% 40%) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(35 90% 50%) 0%, hsl(25 90% 45%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(210 45% 50%) 0%, hsl(210 50% 40%) 100%);
     --gradient-dark: linear-gradient(180deg, hsl(0 0% 4%) 0%, hsl(0 0% 2%) 100%);
     --shadow-glow: 0 0 40px hsl(210 50% 50% / 0.1);
     --shadow-card: 0 10px 40px -10px hsl(0 0% 0% / 0.7);
@@ -76,8 +76,8 @@
     --popover-foreground: 0 0% 95%;
     --primary: 210 50% 50%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 35 90% 50%;
-    --secondary-foreground: 0 0% 5%;
+    --secondary: 210 45% 45%;
+    --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 10%;
     --muted-foreground: 0 0% 55%;
     --accent: 0 0% 12%;

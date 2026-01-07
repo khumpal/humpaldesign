@@ -49,11 +49,11 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-3">
-            <a href="tel:+14085551234" className="flex items-center text-xs text-muted-foreground hover:text-foreground">
+            <a href="tel:+15107861683" className="flex items-center text-xs text-muted-foreground hover:text-foreground">
               <Phone className="w-3 h-3 mr-1" />
-              (408) 555-1234
+              (510) 786-1683
             </a>
-            <Button asChild size="sm" className="bg-gradient-secondary hover:opacity-90 text-secondary-foreground font-semibold">
+            <Button asChild size="sm" className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-semibold">
               <Link to="/quote">Quote</Link>
             </Button>
           </div>
