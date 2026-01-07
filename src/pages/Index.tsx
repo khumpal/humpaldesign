@@ -4,7 +4,7 @@ import { ArrowRight, Shield, Clock, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import heroBackground from "@/assets/hero-background.gif";
-
+import machiningPart1 from "@/assets/machining-part-1.jpg";
 const stats = [
   { number: "26+", label: "Years Experience" },
   { number: "1000+", label: "Projects Completed" },
@@ -241,7 +241,7 @@ const Index = () => {
                 icon: Award,
                 title: "26 Years Experience",
                 description: "Established in 2000, we bring decades of precision machining expertise to every project.",
-                image: "https://images.unsplash.com/photo-1562408590-e32931084e23?w=600&q=80",
+                image: machiningPart1,
               },
               {
                 icon: Clock,
