@@ -1,74 +1,85 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Cog, Wrench, Cpu, Factory } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 
-const galleryItems = [
+const galleryImages = [
   {
-    title: "Aerospace Bracket",
+    src: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&q=80",
+    title: "5-Axis Machined Component",
     category: "Aerospace",
-    description: "5-axis machined aluminum bracket for aircraft structural assembly",
-    icon: "✈️",
   },
   {
-    title: "Medical Implant Housing",
+    src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
+    title: "Precision Medical Part",
     category: "Medical",
-    description: "Titanium housing for implantable medical device with sub-micron tolerances",
-    icon: "🏥",
   },
   {
+    src: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80",
+    title: "CNC Turned Component",
+    category: "Industrial",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1562408590-e32931084e23?w=800&q=80",
     title: "Semiconductor Fixture",
     category: "Semiconductor",
-    description: "Ultra-precision wafer handling component in 6061-T6 aluminum",
-    icon: "💾",
   },
   {
-    title: "Complex Impeller",
-    category: "Industrial",
-    description: "5-axis machined stainless steel impeller for pumping application",
-    icon: "⚙️",
+    src: "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=800&q=80",
+    title: "Complex Geometry Part",
+    category: "Aerospace",
   },
   {
-    title: "Optical Mount",
-    category: "Technology",
-    description: "Precision aluminum mount for laser alignment system",
-    icon: "🔬",
-  },
-  {
-    title: "Surgical Tool",
-    category: "Medical",
-    description: "Stainless steel surgical instrument with complex geometry",
-    icon: "🏥",
-  },
-  {
-    title: "Defense Component",
-    category: "Defense",
-    description: "ITAR-compliant aluminum component for defense application",
-    icon: "🛡️",
-  },
-  {
+    src: "https://images.unsplash.com/photo-1567789884554-0b844b597180?w=800&q=80",
     title: "Prototype Assembly",
     category: "R&D",
-    description: "Multi-component prototype for product development team",
-    icon: "🔧",
   },
   {
-    title: "Vacuum Chamber Part",
-    category: "Semiconductor",
-    description: "Leak-tight stainless component for vacuum system",
-    icon: "💾",
+    src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    title: "Aluminum Housing",
+    category: "Industrial",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1485083269755-a7b559a4fe5e?w=800&q=80",
+    title: "Stainless Steel Component",
+    category: "Medical",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=800&q=80",
+    title: "Defense Component",
+    category: "Defense",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80",
+    title: "Titanium Part",
+    category: "Aerospace",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&q=80",
+    title: "Optical Mount",
+    category: "Technology",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80",
+    title: "Production Run Parts",
+    category: "Industrial",
   },
 ];
-
-const categories = ["All", "Aerospace", "Medical", "Semiconductor", "Defense", "Industrial", "Technology", "R&D"];
 
 const Gallery = () => {
   return (
     <Layout>
       {/* Hero Section */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]" />
+        <div className="absolute inset-0 opacity-30">
+          <img 
+            src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1920&q=80" 
+            alt="CNC Machining" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/80" />
+        </div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -88,33 +99,13 @@ const Gallery = () => {
         </div>
       </section>
 
-      {/* Category Filters */}
-      <section className="py-8 border-b border-border">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap gap-2 justify-center">
-            {categories.map((category) => (
-              <button
-                key={category}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  category === "All"
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/50"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Gallery Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {galleryItems.map((item, index) => (
+            {galleryImages.map((item, index) => (
               <motion.div
-                key={item.title}
+                key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -122,16 +113,16 @@ const Gallery = () => {
                 className="group"
               >
                 <div className="aspect-[4/3] bg-card rounded-2xl border border-border overflow-hidden relative">
-                  {/* Placeholder for actual images */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-                    <span className="text-6xl">{item.icon}</span>
-                  </div>
+                  <img 
+                    src={item.src} 
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                   
                   {/* Overlay on hover */}
-                  <div className="absolute inset-0 bg-background/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                  <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                     <span className="text-primary text-sm font-medium mb-2">{item.category}</span>
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                    <h3 className="text-xl font-bold">{item.title}</h3>
                   </div>
                 </div>
               </motion.div>
@@ -141,7 +132,7 @@ const Gallery = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-24 bg-card/50 border-y border-border">
+      <section className="py-24 bg-card/30 border-y border-border">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
