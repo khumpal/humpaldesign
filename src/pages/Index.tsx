@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Shield, Clock, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import heroBackground from "@/assets/hero-background.gif";
 
 const stats = [
   { number: "26+", label: "Years Experience" },
@@ -30,16 +31,16 @@ const galleryImages = [
 const Index = () => {
   return (
     <Layout>
-      {/* Hero Section with Photo Background */}
+      {/* Hero Section with GIF Background */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        {/* Background Photo */}
+        {/* Background GIF */}
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1920&q=80" 
+            src={heroBackground} 
             alt="CNC Machining" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/70" />
+          <div className="absolute inset-0 bg-black/60" />
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
