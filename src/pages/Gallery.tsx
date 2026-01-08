@@ -3,68 +3,28 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import partBracket from "@/assets/part-bracket.jpg";
+import partHousing1 from "@/assets/part-housing-1.jpg";
+import partHousing2 from "@/assets/part-housing-2.jpg";
+import partPlate1 from "@/assets/part-plate-1.jpg";
+import partPlate2 from "@/assets/part-plate-2.jpg";
+import partPlate3 from "@/assets/part-plate-3.jpg";
+import partDisc from "@/assets/part-disc.jpg";
+import partsCollection from "@/assets/parts-collection.jpg";
+import haas5Axis from "@/assets/haas-5axis.jpg";
+import machiningPart1 from "@/assets/machining-part-1.jpg";
 
 const galleryImages = [
-  {
-    src: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&q=80",
-    title: "5-Axis Machined Component",
-    category: "Aerospace",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
-    title: "Precision Medical Part",
-    category: "Medical",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80",
-    title: "CNC Turned Component",
-    category: "Industrial",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1562408590-e32931084e23?w=800&q=80",
-    title: "Semiconductor Fixture",
-    category: "Semiconductor",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=800&q=80",
-    title: "Complex Geometry Part",
-    category: "Aerospace",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1567789884554-0b844b597180?w=800&q=80",
-    title: "Prototype Assembly",
-    category: "R&D",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-    title: "Aluminum Housing",
-    category: "Industrial",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1485083269755-a7b559a4fe5e?w=800&q=80",
-    title: "Stainless Steel Component",
-    category: "Medical",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=800&q=80",
-    title: "Defense Component",
-    category: "Defense",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80",
-    title: "Titanium Part",
-    category: "Aerospace",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&q=80",
-    title: "Optical Mount",
-    category: "Technology",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80",
-    title: "Production Run Parts",
-    category: "Industrial",
-  },
+  { src: partBracket, title: "Complex 5-Axis Bracket" },
+  { src: partHousing1, title: "Precision Housing Assembly" },
+  { src: partPlate2, title: "Aerospace Mounting Plate" },
+  { src: partDisc, title: "Multi-Feature Disc Component" },
+  { src: partHousing2, title: "Instrument Housing" },
+  { src: partPlate1, title: "Large Format Plate" },
+  { src: partPlate3, title: "Contoured Ring Plate" },
+  { src: partsCollection, title: "Production Parts Collection" },
+  { src: haas5Axis, title: "5-Axis Machine Work" },
+  { src: machiningPart1, title: "Precision Turned Component" },
 ];
 
 const Gallery = () => {
@@ -74,8 +34,8 @@ const Gallery = () => {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <img 
-            src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1920&q=80" 
-            alt="CNC Machining" 
+            src={partsCollection} 
+            alt="Precision parts" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/80" />
@@ -93,7 +53,7 @@ const Gallery = () => {
               Project <span className="text-gradient">Gallery</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              A showcase of precision parts we've manufactured across various industries and applications.
+              Complex prototypes and precision parts we've manufactured. Our specialty is tackling the most difficult projects combining 5-axis milling and precision turning.
             </p>
           </motion.div>
         </div>
@@ -121,7 +81,6 @@ const Gallery = () => {
                   
                   {/* Overlay on hover */}
                   <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                    <span className="text-primary text-sm font-medium mb-2">{item.category}</span>
                     <h3 className="text-xl font-bold">{item.title}</h3>
                   </div>
                 </div>
@@ -180,9 +139,9 @@ const Gallery = () => {
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Let's Create Something Together</h2>
             <p className="text-muted-foreground text-lg mb-8">
-              Have a project in mind? Share your design files with us and let's discuss how we can bring your ideas to life.
+              Have a challenging project? We specialize in the most difficult prototyping work. Share your design files and let's discuss.
             </p>
-            <Button asChild size="lg" className="bg-gradient-secondary hover:opacity-90 text-secondary-foreground font-semibold px-8">
+            <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-semibold px-8">
               <Link to="/quote">
                 Start Your Project
                 <ArrowRight className="ml-2 w-5 h-5" />

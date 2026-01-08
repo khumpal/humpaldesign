@@ -2,13 +2,15 @@ import { motion } from "framer-motion";
 import { Award, Users, Target, History } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import buildingExterior from "@/assets/building-exterior.jpg";
+import partBracket from "@/assets/part-bracket.jpg";
+import partsCollection from "@/assets/parts-collection.jpg";
 
 const milestones = [
   { year: "2000", event: "Humpal Design Support founded in Silicon Valley" },
-  { year: "2005", event: "Expanded facility and added first 5-axis machine" },
+  { year: "2005", event: "Expanded facility and added 5-axis capability" },
   { year: "2010", event: "Achieved ISO 9001 certification" },
-  { year: "2015", event: "Added advanced Haas and Hurco equipment" },
-  { year: "2020", event: "Celebrated 20 years with major facility upgrade" },
+  { year: "2015", event: "Major equipment expansion" },
+  { year: "2020", event: "Celebrated 20 years with facility upgrade" },
   { year: "2024", event: "Continuing to serve aerospace, medical, and tech industries" },
 ];
 
@@ -90,13 +92,11 @@ const About = () => {
               className="relative"
             >
               <div className="aspect-[4/3] bg-card rounded-2xl border border-border overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-8xl font-bold text-gradient mb-4">26</div>
-                    <p className="text-2xl font-semibold text-foreground">Years of Excellence</p>
-                    <p className="text-muted-foreground mt-2">Est. 2000</p>
-                  </div>
-                </div>
+                <img 
+                  src={partsCollection} 
+                  alt="Collection of precision machined parts"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </motion.div>
           </div>
