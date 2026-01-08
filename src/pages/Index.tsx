@@ -8,10 +8,11 @@ import partBracket from "@/assets/part-bracket.jpg";
 import partHousing1 from "@/assets/part-housing-1.jpg";
 import partHousing2 from "@/assets/part-housing-2.jpg";
 import partPlate1 from "@/assets/part-plate-1.jpg";
-import partPlate2 from "@/assets/part-plate-2.jpg";
-import partPlate3 from "@/assets/part-plate-3.jpg";
 import partDisc from "@/assets/part-disc.jpg";
 import partsCollection from "@/assets/parts-collection.jpg";
+import partAerospaceBrackets from "@/assets/part-aerospace-brackets.jpg";
+import partTrioHousings from "@/assets/part-trio-housings.jpg";
+import partImpellerStand from "@/assets/part-impeller-stand.jpg";
 
 
 const industries = [
@@ -24,10 +25,10 @@ const industries = [
 const galleryImages = [
   partBracket,
   partHousing1,
-  partPlate2,
   partDisc,
-  partPlate3,
-  partsCollection,
+  partAerospaceBrackets,
+  partTrioHousings,
+  partImpellerStand,
 ];
 
 const Index = () => {
