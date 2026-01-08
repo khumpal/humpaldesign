@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import partBracket from "@/assets/part-bracket.jpg";
-import partHousing1 from "@/assets/part-housing-1.jpg";
+import partTurningTube from "@/assets/part-turning-tube.jpg";
 import partHousing2 from "@/assets/part-housing-2.jpg";
 import partPlate1 from "@/assets/part-plate-1.jpg";
 import partPlate2 from "@/assets/part-plate-2.jpg";
@@ -14,7 +14,7 @@ import partsCollection from "@/assets/parts-collection.jpg";
 
 const galleryImages = [
   partBracket,
-  partHousing1,
+  partTurningTube,
   partPlate2,
   partDisc,
   partPlate3,
@@ -30,7 +30,7 @@ const capabilities = [
   {
     title: "Precision Turning",
     description: "Thread turning, complex profiles, and tight tolerances on turned components.",
-    image: partHousing1,
+    image: partTurningTube,
   },
   {
     title: "Complex Prototyping",
