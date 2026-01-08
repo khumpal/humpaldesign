@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import part5axisDisc from "@/assets/part-5axis-disc.jpg";
 import part5axisRotary from "@/assets/part-5axis-rotary.jpg";
 import partTurningTube from "@/assets/part-turning-tube.jpg";
-import partPlate1 from "@/assets/part-plate-1.jpg";
 import partPlate2 from "@/assets/part-plate-2.jpg";
 import partAluminumFrames from "@/assets/part-aluminum-frames.jpg";
 import partFixturePlates from "@/assets/part-fixture-plates.jpg";
@@ -13,7 +13,7 @@ import partAerospaceBrackets from "@/assets/part-aerospace-brackets.jpg";
 import partPrecisionPlates from "@/assets/part-precision-plates.jpg";
 
 const galleryImages = [
-  part5axisRotary,
+  part5axisDisc,
   partTurningTube,
   partPlate2,
   partFixturePlates,
@@ -25,7 +25,7 @@ const capabilities = [
   {
     title: "5-Axis CNC Milling",
     description: "Complex geometries with simultaneous 5-axis positioning for aerospace, medical, and semiconductor parts.",
-    image: part5axisRotary,
+    image: part5axisDisc,
   },
   {
     title: "Precision Turning",
@@ -35,7 +35,7 @@ const capabilities = [
   {
     title: "Complex Prototyping",
     description: "Our specialty is tackling the most difficult prototyping combining multiple machining operations.",
-    image: partPlate1,
+    image: part5axisRotary,
   },
   {
     title: "Production Runs",
