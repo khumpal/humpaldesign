@@ -7,12 +7,13 @@ import heroBackground from "@/assets/hero-background.gif";
 import partBracket from "@/assets/part-bracket.jpg";
 import partHousing1 from "@/assets/part-housing-1.jpg";
 import partHousing2 from "@/assets/part-housing-2.jpg";
-import partPlate1 from "@/assets/part-plate-1.jpg";
 import partDisc from "@/assets/part-disc.jpg";
 import partsCollection from "@/assets/parts-collection.jpg";
 import partAerospaceBrackets from "@/assets/part-aerospace-brackets.jpg";
 import partTrioHousings from "@/assets/part-trio-housings.jpg";
 import partImpellerStand from "@/assets/part-impeller-stand.jpg";
+import partTurnedHub from "@/assets/part-turned-hub.jpg";
+import partStarWheels from "@/assets/part-star-wheels.jpg";
 
 
 const industries = [
@@ -224,13 +225,13 @@ const Index = () => {
                 icon: Award,
                 title: "26 Years Experience",
                 description: "Established in 2000, we bring decades of precision machining expertise to every project.",
-                image: partPlate1,
+                image: partTurnedHub,
               },
               {
                 icon: Clock,
                 title: "Fast Turnaround",
                 description: "Rapid prototyping capabilities with quick quotes and expedited production options.",
-                image: partBracket,
+                image: partStarWheels,
               },
               {
                 icon: Shield,
