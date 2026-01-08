@@ -55,6 +55,7 @@ import part2499 from "@/assets/part-2499.jpg";
 import part2501 from "@/assets/part-2501.jpg";
 import part2510 from "@/assets/part-2510.jpg";
 import part2759 from "@/assets/part-2759.jpg";
+import part2855 from "@/assets/part-2855.jpg";
 import part1820 from "@/assets/part-1820.jpg";
 // Gallery ordered: most complex first, mix of 5-axis, turning, different materials
 const galleryImages = [
@@ -103,6 +104,7 @@ const galleryImages = [
   part2501,                 // Precision turned enclosure
   part2510,                 // CNC lathe in action
   part2759,                 // Complex 5-axis brackets
+  part2855,                 // Precision turned flanges
   part1820,                 // Precision milled plate
   partHousing2,             // Instrument housing
   partTrioDiscs,            // Disc set
