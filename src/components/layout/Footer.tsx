@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Star } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -94,7 +94,16 @@ const Footer = () => {
           <p className="text-muted-foreground text-sm">
             © {new Date().getFullYear()} Humpal Design Support. All rights reserved.
           </p>
-          <div className="flex space-x-6">
+          <div className="flex items-center space-x-6">
+            <a 
+              href="https://www.manta.com/c/mmbq285/humpal-design-support" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center text-muted-foreground hover:text-primary text-sm transition-colors"
+            >
+              <Star className="w-4 h-4 mr-1 fill-primary text-primary" />
+              5.0 Reviews
+            </a>
             <Link to="/quote" className="text-muted-foreground hover:text-primary text-sm transition-colors">
               Request Quote
             </Link>
