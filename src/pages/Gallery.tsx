@@ -13,13 +13,33 @@ import partDisc from "@/assets/part-disc.jpg";
 import partsCollection from "@/assets/parts-collection.jpg";
 import haas5Axis from "@/assets/haas-5axis.jpg";
 import machiningPart1 from "@/assets/machining-part-1.jpg";
+import partEnclosure from "@/assets/part-enclosure.jpg";
+import partFinnedRing from "@/assets/part-finned-ring.jpg";
+import partHeatsinkBox from "@/assets/part-heatsink-box.jpg";
+import partSpindle from "@/assets/part-spindle.jpg";
+import partCouplers from "@/assets/part-couplers.jpg";
+import partStarWheels from "@/assets/part-star-wheels.jpg";
+import partPlasticRing from "@/assets/part-plastic-ring.jpg";
+import partTrioDiscs from "@/assets/part-trio-discs.jpg";
+import partComplexDisc from "@/assets/part-complex-disc.jpg";
+import partSpiralDisc from "@/assets/part-spiral-disc.jpg";
 
 const galleryImages = [
+  { src: partFinnedRing, title: "Finned Circular Component" },
   { src: partBracket, title: "Complex 5-Axis Bracket" },
+  { src: partEnclosure, title: "Deep Pocket Enclosure" },
+  { src: partHeatsinkBox, title: "Finned Heatsink Housing" },
   { src: partHousing1, title: "Precision Housing Assembly" },
+  { src: partCouplers, title: "Multi-Feature Couplers" },
+  { src: partStarWheels, title: "Star Wheel Components" },
   { src: partPlate2, title: "Aerospace Mounting Plate" },
-  { src: partDisc, title: "Multi-Feature Disc Component" },
+  { src: partDisc, title: "Multi-Feature Disc" },
+  { src: partSpindle, title: "Turned Spindle Component" },
+  { src: partPlasticRing, title: "Machined Plastic Ring" },
   { src: partHousing2, title: "Instrument Housing" },
+  { src: partTrioDiscs, title: "Precision Disc Set" },
+  { src: partComplexDisc, title: "Complex Circular Plate" },
+  { src: partSpiralDisc, title: "Spiral Pattern Component" },
   { src: partPlate1, title: "Large Format Plate" },
   { src: partPlate3, title: "Contoured Ring Plate" },
   { src: partsCollection, title: "Production Parts Collection" },
@@ -34,7 +54,7 @@ const Gallery = () => {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <img 
-            src={partsCollection} 
+            src={partFinnedRing} 
             alt="Precision parts" 
             className="w-full h-full object-cover"
           />
@@ -62,14 +82,14 @@ const Gallery = () => {
       {/* Gallery Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {galleryImages.map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
+                transition={{ delay: index * 0.03 }}
                 className="group"
               >
                 <div className="aspect-[4/3] bg-card rounded-2xl border border-border overflow-hidden relative">
@@ -81,7 +101,7 @@ const Gallery = () => {
                   
                   {/* Overlay on hover */}
                   <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                    <h3 className="text-xl font-bold">{item.title}</h3>
+                    <h3 className="text-lg font-bold">{item.title}</h3>
                   </div>
                 </div>
               </motion.div>
