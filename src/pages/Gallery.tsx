@@ -27,9 +27,18 @@ import part5axisDisc from "@/assets/part-5axis-disc.jpg";
 import partAnodizedTube from "@/assets/part-anodized-tube.jpg";
 import partShowroomDisplay from "@/assets/part-showroom-display.jpg";
 import part5axisRotary from "@/assets/part-5axis-rotary.jpg";
-
-
 import partAluminumFrames from "@/assets/part-aluminum-frames.jpg";
+// New batch of complex parts
+import partComplexContour1 from "@/assets/part-complex-contour-1.jpg";
+import partComplexContour2 from "@/assets/part-complex-contour-2.jpg";
+import partTurnedHousings from "@/assets/part-turned-housings.jpg";
+import partSpokedWheel from "@/assets/part-spoked-wheel.jpg";
+import partAssemblySet from "@/assets/part-assembly-set.jpg";
+import partPlasticRings from "@/assets/part-plastic-rings.jpg";
+import partTurbineDisc from "@/assets/part-turbine-disc.jpg";
+import partCurvedBrackets from "@/assets/part-curved-brackets.jpg";
+import partGearRing from "@/assets/part-gear-ring.jpg";
+import partSpokedDisc from "@/assets/part-spoked-disc.jpg";
 
 // Gallery ordered: most complex first, mix of 5-axis, turning, different materials
 const galleryImages = [
@@ -41,8 +50,17 @@ const galleryImages = [
   part5axisRotary,          // 5-axis rotary bracket
   partSpindle,              // Turned spindle
   partFinnedRing,           // Finned turned component
-  
-  
+  // New complex parts
+  partComplexContour1,      // Large contoured 5-axis part
+  partComplexContour2,      // Contoured 5-axis part angle view
+  partTurnedHousings,       // Precision turned housings
+  partSpokedWheel,          // Spoked wheel 5-axis
+  partAssemblySet,          // Multi-part assembly set
+  partPlasticRings,         // Plastic precision rings
+  partTurbineDisc,          // Complex turbine disc
+  partCurvedBrackets,       // Curved structural brackets
+  partGearRing,             // Gear ring with teeth
+  partSpokedDisc,           // Spoked disc on stand
   partAluminumFrames,       // Aluminum frame assemblies
   partBracket,              // Complex bracket
   partEnclosure,            // Deep pocket enclosure
