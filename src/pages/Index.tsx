@@ -18,6 +18,7 @@ import partFinnedRing from "@/assets/part-finned-ring.jpg";
 import partFixturePlates from "@/assets/part-fixture-plates.jpg";
 import partImpellerStand from "@/assets/part-impeller-stand.jpg";
 import part5axisMachining from "@/assets/part-5axis-machining.jpg";
+import partContourMachining from "@/assets/part-contour-machining.jpg";
 
 
 const industries = [
@@ -30,7 +31,7 @@ const industries = [
 const galleryImages = [
   part1735,
   part5axisMachining,
-  part1820,
+  partContourMachining,
   part2499,
   part2759,
   partImpellerStand,
