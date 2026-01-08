@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Shield, Clock, Award } from "lucide-react";
+import { ArrowRight, Shield, Clock, Award, Star, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import heroBackground from "@/assets/hero-background.gif";
@@ -31,6 +31,20 @@ const galleryImages = [
   part2499,
   part2759,
   part1820,
+];
+
+const testimonials = [
+  {
+    name: "Michael Regalbuto",
+    text: "It has been my pleasure to work with Raj for over three years. The quality of his work is excellent, his prices are fair, and he makes his delivery commitments. I trust Raj to be able to manufacture my most complicated designs.",
+    rating: 5,
+  },
+  {
+    name: "Lawson Fisher",
+    title: "VP Manufacturing, NovaTorque",
+    text: "I have been using Humpal Design for over 10 years. Consistently the highest quality parts delivered on time, even on very complex parts. Humpal stands by their work.",
+    rating: 5,
+  },
 ];
 
 const Index = () => {
@@ -269,7 +283,70 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Testimonials Section */}
+      <section className="py-24 bg-card/30 border-y border-border">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <div className="flex items-center justify-center gap-1 mb-4">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-6 h-6 fill-primary text-primary" />
+              ))}
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              What Our <span className="text-gradient">Clients Say</span>
+            </h2>
+            <p className="text-muted-foreground">5.0 Rating on Manta</p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-card border border-border rounded-2xl p-8"
+              >
+                <div className="flex gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-6 italic">"{testimonial.text}"</p>
+                <div>
+                  <p className="font-semibold text-foreground">{testimonial.name}</p>
+                  {testimonial.title && (
+                    <p className="text-sm text-muted-foreground">{testimonial.title}</p>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <a 
+              href="https://www.manta.com/c/mmbq285/humpal-design-support" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-primary hover:underline"
+            >
+              See more reviews on Manta
+              <ExternalLink className="w-4 h-4 ml-1" />
+            </a>
+          </motion.div>
+        </div>
+      </section>
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
