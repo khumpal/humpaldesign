@@ -3,44 +3,44 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
-import part5axisDisc from "@/assets/part-5axis-disc.jpg";
-import part5axisRotary from "@/assets/part-5axis-rotary.jpg";
-import partTurningTube from "@/assets/part-turning-tube.jpg";
-import partPlate2 from "@/assets/part-plate-2.jpg";
-import partAluminumFrames from "@/assets/part-aluminum-frames.jpg";
-
-
-
+import partSpokedWheel from "@/assets/part-spoked-wheel.jpg";
+import partThreadedSpindle from "@/assets/part-threaded-spindle.jpg";
+import partTurbineDisc from "@/assets/part-turbine-disc.jpg";
+import partComplexContour1 from "@/assets/part-complex-contour-1.jpg";
+import partWheelHubs from "@/assets/part-wheel-hubs.jpg";
+import partFlangesArray from "@/assets/part-flanges-array.jpg";
+import partGearRing from "@/assets/part-gear-ring.jpg";
+import partEnclosureSet from "@/assets/part-enclosure-set.jpg";
 
 const galleryImages = [
-  part5axisDisc,
-  partTurningTube,
-  partPlate2,
-  partTurningTube,
-  partAluminumFrames,
-  partPlate2,
+  partSpokedWheel,
+  partThreadedSpindle,
+  partTurbineDisc,
+  partWheelHubs,
+  partFlangesArray,
+  partGearRing,
 ];
 
 const capabilities = [
   {
     title: "5-Axis CNC Milling",
     description: "Complex geometries with simultaneous 5-axis positioning for aerospace, medical, and semiconductor parts.",
-    image: part5axisDisc,
+    image: partSpokedWheel,
   },
   {
     title: "Precision Turning",
     description: "Thread turning, complex profiles, and tight tolerances on turned components.",
-    image: partTurningTube,
+    image: partThreadedSpindle,
   },
   {
     title: "Complex Prototyping",
     description: "Our specialty is tackling the most difficult prototyping combining multiple machining operations.",
-    image: part5axisRotary,
+    image: partTurbineDisc,
   },
   {
     title: "Production Runs",
     description: "From single prototypes to production quantities with consistent quality.",
-    image: partAluminumFrames,
+    image: partFlangesArray,
   },
 ];
 
@@ -51,8 +51,8 @@ const Capabilities = () => {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <img 
-            src={partPlate2} 
-            alt="Precision machined plate" 
+            src={partComplexContour1} 
+            alt="Precision machined part" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/80" />
@@ -93,7 +93,7 @@ const Capabilities = () => {
                   <img 
                     src={cap.image} 
                     alt={cap.title}
-                    className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${cap.title === "Precision Turning" ? "object-contain bg-muted" : "object-cover"}`}
+                    className="w-full h-full transition-transform duration-500 group-hover:scale-105 object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
                 </div>

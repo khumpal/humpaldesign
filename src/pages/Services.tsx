@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { ArrowRight, Cog, Wrench, Cpu, Factory, Settings, Gauge } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
-import partImpellerTurning from "@/assets/part-impeller-turning.jpg";
-import partShowroomDisplay from "@/assets/part-showroom-display.jpg";
-import partGearShaft from "@/assets/part-gear-shaft.jpg";
+import partSpokedWheel from "@/assets/part-spoked-wheel.jpg";
+import partThreadedSpindle from "@/assets/part-threaded-spindle.jpg";
+import partWheelHubs from "@/assets/part-wheel-hubs.jpg";
 
 const services = [
   {
@@ -90,7 +90,7 @@ const Services = () => {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img 
-            src={partImpellerTurning} 
+            src={partSpokedWheel} 
             alt="Precision part" 
             className="w-full h-full object-cover"
           />
@@ -125,7 +125,7 @@ const Services = () => {
               viewport={{ once: true }}
               className="aspect-[16/9] rounded-xl overflow-hidden border border-border"
             >
-              <img src={partImpellerTurning} alt="Precision turning" className="w-full h-full object-cover" />
+              <img src={partSpokedWheel} alt="5-axis spoked wheel" className="w-full h-full object-cover" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -134,7 +134,7 @@ const Services = () => {
               transition={{ delay: 0.1 }}
               className="aspect-[16/9] rounded-xl overflow-hidden border border-border"
             >
-              <img src={partShowroomDisplay} alt="Showroom display" className="w-full h-full object-cover" />
+              <img src={partThreadedSpindle} alt="Threaded spindle" className="w-full h-full object-cover" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -143,7 +143,7 @@ const Services = () => {
               transition={{ delay: 0.2 }}
               className="aspect-[16/9] rounded-xl overflow-hidden border border-border"
             >
-              <img src={partGearShaft} alt="Gear shaft assembly" className="w-full h-full object-cover" />
+              <img src={partWheelHubs} alt="Wheel hub assemblies" className="w-full h-full object-cover" />
             </motion.div>
           </div>
         </div>
