@@ -122,44 +122,6 @@ const Gallery = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-24 bg-card/30 border-y border-border">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">26 Years of Precision Work</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Every part we produce reflects our commitment to quality and precision.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            {[
-              { number: "1000+", label: "Projects Completed" },
-              { number: "50+", label: "Industries Served" },
-              { number: "1M+", label: "Parts Produced" },
-              { number: "99.9%", label: "Quality Rate" },
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
-              >
-                <p className="text-4xl font-bold text-gradient mb-2">{stat.number}</p>
-                <p className="text-muted-foreground text-sm uppercase tracking-wider">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-24">
         <div className="container mx-auto px-4">
