@@ -5,15 +5,6 @@ import buildingExterior from "@/assets/building-exterior.jpg";
 import partBracket from "@/assets/part-bracket.jpg";
 import partsCollection from "@/assets/parts-collection.jpg";
 
-const milestones = [
-  { year: "2000", event: "Humpal Design Support founded in Silicon Valley" },
-  { year: "2005", event: "Expanded facility and added 5-axis capability" },
-  { year: "2010", event: "Achieved ISO 9001 certification" },
-  { year: "2015", event: "Major equipment expansion" },
-  { year: "2020", event: "Celebrated 20 years with facility upgrade" },
-  { year: "2024", event: "Continuing to serve aerospace, medical, and tech industries" },
-];
-
 const values = [
   {
     icon: Target,
@@ -133,42 +124,6 @@ const About = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{value.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline Section */}
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Milestones</h2>
-            <p className="text-muted-foreground text-lg">Key moments in our 26-year journey.</p>
-          </motion.div>
-
-          <div className="max-w-3xl mx-auto">
-            {milestones.map((milestone, index) => (
-              <motion.div
-                key={milestone.year}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="flex items-center gap-6 mb-8"
-              >
-                <div className="w-24 flex-shrink-0 text-right">
-                  <span className="text-2xl font-bold text-gradient">{milestone.year}</span>
-                </div>
-                <div className="w-4 h-4 rounded-full bg-primary flex-shrink-0" />
-                <div className="flex-1 p-4 bg-card rounded-lg border border-border">
-                  <p className="text-foreground">{milestone.event}</p>
-                </div>
               </motion.div>
             ))}
           </div>
