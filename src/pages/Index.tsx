@@ -4,15 +4,17 @@ import { ArrowRight, Shield, Clock, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import heroBackground from "@/assets/hero-background.gif";
+import part1735 from "@/assets/part-1735.jpg";
+import part1836 from "@/assets/part-1836.jpg";
+import part1982 from "@/assets/part-1982.jpg";
+import part2495 from "@/assets/part-2495.jpg";
+import part2499 from "@/assets/part-2499.jpg";
+import part2501 from "@/assets/part-2501.jpg";
+import part2510 from "@/assets/part-2510.jpg";
+import part2759 from "@/assets/part-2759.jpg";
+import part1820 from "@/assets/part-1820.jpg";
 import partSpindle from "@/assets/part-spindle.jpg";
 import partFinnedRing from "@/assets/part-finned-ring.jpg";
-import partBracket from "@/assets/part-bracket.jpg";
-import partDisc from "@/assets/part-disc.jpg";
-import partEnclosure from "@/assets/part-enclosure.jpg";
-import partHousing1 from "@/assets/part-housing-1.jpg";
-import partHousing2 from "@/assets/part-housing-2.jpg";
-import partGearRing from "@/assets/part-gear-ring.jpg";
-import partTurbineDisc from "@/assets/part-turbine-disc.jpg";
 
 
 const industries = [
@@ -23,12 +25,12 @@ const industries = [
 ];
 
 const galleryImages = [
-  partSpindle,
-  partFinnedRing,
-  partBracket,
-  partDisc,
-  partEnclosure,
-  partHousing1,
+  part1735,
+  part1836,
+  part1982,
+  part2499,
+  part2759,
+  part1820,
 ];
 
 const Index = () => {
@@ -193,7 +195,7 @@ const Index = () => {
             >
               <div className="aspect-square overflow-hidden rounded-2xl border border-border">
                 <img 
-                  src={partHousing2} 
+                  src={part2501} 
                   alt="Precision machined part" 
                   className="w-full h-full object-cover"
                 />
@@ -236,7 +238,7 @@ const Index = () => {
                 icon: Shield,
                 title: "Quality Guaranteed",
                 description: "Rigorous inspection processes ensure every part meets your exact specifications.",
-                image: partGearRing,
+                image: part2495,
               },
             ].map((item, index) => (
               <motion.div
@@ -271,7 +273,7 @@ const Index = () => {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src={partTurbineDisc} 
+            src={part2510} 
             alt="Precision machined parts" 
             className="w-full h-full object-cover opacity-20"
           />
