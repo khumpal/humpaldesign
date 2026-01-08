@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import partBracket from "@/assets/part-bracket.jpg";
 import partHousing1 from "@/assets/part-housing-1.jpg";
-import partPlate2 from "@/assets/part-plate-2.jpg";
+import partGearShaft from "@/assets/part-gear-shaft.jpg";
 
 const services = [
   {
@@ -153,7 +153,7 @@ const Services = () => {
               transition={{ delay: 0.2 }}
               className="aspect-[16/9] rounded-xl overflow-hidden border border-border"
             >
-              <img src={partPlate2} alt="Mounting plate" className="w-full h-full object-cover" />
+              <img src={partGearShaft} alt="Gear shaft assembly" className="w-full h-full object-cover" />
             </motion.div>
           </div>
         </div>
