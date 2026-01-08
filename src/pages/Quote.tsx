@@ -238,10 +238,13 @@ const Quote = () => {
                       />
                     </div>
 
-                    {/* File Upload Placeholder */}
+                    {/* File Upload */}
                     <div className="space-y-2">
-                      <Label>Upload Files (CAD drawings, specifications)</Label>
-                      <div className="border-2 border-dashed border-border rounded-xl p-8 text-center hover:border-primary/50 transition-colors cursor-pointer">
+                      <Label htmlFor="files">Upload Files (CAD drawings, specifications)</Label>
+                      <label 
+                        htmlFor="files"
+                        className="border-2 border-dashed border-border rounded-xl p-8 text-center hover:border-primary/50 transition-colors cursor-pointer block"
+                      >
                         <Upload className="w-10 h-10 text-muted-foreground mx-auto mb-4" />
                         <p className="text-muted-foreground mb-2">
                           Drag and drop files here, or click to browse
@@ -249,7 +252,15 @@ const Quote = () => {
                         <p className="text-sm text-muted-foreground">
                           Accepts: STEP, IGES, DXF, DWG, PDF, SolidWorks (max 50MB)
                         </p>
-                      </div>
+                        <input
+                          id="files"
+                          name="files"
+                          type="file"
+                          multiple
+                          accept=".step,.stp,.iges,.igs,.dxf,.dwg,.pdf,.sldprt,.sldasm,.x_t,.stl"
+                          className="hidden"
+                        />
+                      </label>
                     </div>
                   </div>
                 </div>
