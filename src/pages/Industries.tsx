@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Plane, Stethoscope, Cpu, Factory, Shield, Microscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+// Unique images for Industries page - no duplicates from other pages
+import partEnclosureSet from "@/assets/part-enclosure-set.jpg";
+import partAssemblySet from "@/assets/part-assembly-set.jpg";
+import partRadialDisc from "@/assets/part-radial-disc.jpg";
 
 const industries = [
   {
@@ -48,7 +52,14 @@ const Industries = () => {
     <Layout>
       {/* Hero Section */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]" />
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src={partRadialDisc} 
+            alt="Precision machined part" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/80" />
+        </div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -65,6 +76,40 @@ const Industries = () => {
               From aerospace and medical to semiconductor and general manufacturing, we deliver precision parts that meet the most demanding industry requirements.
             </p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Featured Work Banner */}
+      <section className="py-8 border-y border-border">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="aspect-[16/9] rounded-xl overflow-hidden border border-border"
+            >
+              <img src={partRadialDisc} alt="Radial disc" className="w-full h-full object-cover" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="aspect-[16/9] rounded-xl overflow-hidden border border-border"
+            >
+              <img src={partAssemblySet} alt="Assembly set" className="w-full h-full object-cover" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="aspect-[16/9] rounded-xl overflow-hidden border border-border"
+            >
+              <img src={partEnclosureSet} alt="Enclosure components" className="w-full h-full object-cover" />
+            </motion.div>
+          </div>
         </div>
       </section>
 

@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 import { ArrowRight, Cog, Wrench, Cpu, Factory, Settings, Gauge } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
-import partRadialDisc from "@/assets/part-radial-disc.jpg";
-import partAssemblySet from "@/assets/part-assembly-set.jpg";
-import partEnclosureSet from "@/assets/part-enclosure-set.jpg";
+// Unique images for Services page
+import part2510 from "@/assets/part-2510.jpg"; // Lathe with tailstock - for turning
+import part1725 from "@/assets/part-1725.jpg"; // 5-axis mill setup
+import part2855 from "@/assets/part-2855.jpg"; // Precision turned flanges
 
 const services = [
   {
@@ -90,8 +91,8 @@ const Services = () => {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img 
-            src={partRadialDisc} 
-            alt="Precision part" 
+            src={part1725} 
+            alt="5-axis CNC milling" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/80" />
@@ -125,7 +126,7 @@ const Services = () => {
               viewport={{ once: true }}
               className="aspect-[16/9] rounded-xl overflow-hidden border border-border"
             >
-              <img src={partRadialDisc} alt="Radial disc" className="w-full h-full object-cover" />
+              <img src={part1725} alt="5-axis mill setup" className="w-full h-full object-cover" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -134,7 +135,7 @@ const Services = () => {
               transition={{ delay: 0.1 }}
               className="aspect-[16/9] rounded-xl overflow-hidden border border-border"
             >
-              <img src={partAssemblySet} alt="Assembly set" className="w-full h-full object-cover" />
+              <img src={part2510} alt="CNC lathe with tailstock" className="w-full h-full object-cover" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -143,7 +144,7 @@ const Services = () => {
               transition={{ delay: 0.2 }}
               className="aspect-[16/9] rounded-xl overflow-hidden border border-border"
             >
-              <img src={partEnclosureSet} alt="Enclosure components" className="w-full h-full object-cover" />
+              <img src={part2855} alt="Precision turned flanges" className="w-full h-full object-cover" />
             </motion.div>
           </div>
         </div>
