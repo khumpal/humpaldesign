@@ -19,6 +19,7 @@ import partFixturePlates from "@/assets/part-fixture-plates.jpg";
 import partImpellerStand from "@/assets/part-impeller-stand.jpg";
 import part5axisMachining from "@/assets/part-5axis-machining.jpg";
 import partContourMachining from "@/assets/part-contour-machining.jpg";
+import partPrecisionAssembly from "@/assets/part-precision-assembly.jpg";
 
 
 const industries = [
@@ -33,7 +34,7 @@ const galleryImages = [
   part5axisMachining,
   partContourMachining,
   part2499,
-  part2759,
+  partPrecisionAssembly,
   partImpellerStand,
 ];
 
