@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { Award, Users, Target, History } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import buildingExterior from "@/assets/building-exterior.jpg";
-import partBracket from "@/assets/part-bracket.jpg";
-import partsCollection from "@/assets/parts-collection.jpg";
+// Unique images for About page - no duplicates from other pages
+import partWheelHubs from "@/assets/part-wheel-hubs.jpg";
 
 const values = [
   {
@@ -84,7 +84,7 @@ const About = () => {
             >
               <div className="aspect-[4/3] bg-card rounded-2xl border border-border overflow-hidden">
                 <img 
-                  src={partsCollection} 
+                  src={partWheelHubs} 
                   alt="Collection of precision machined parts"
                   className="w-full h-full object-cover"
                 />
