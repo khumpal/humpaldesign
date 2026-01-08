@@ -28,7 +28,7 @@ import partAnodizedTube from "@/assets/part-anodized-tube.jpg";
 import partShowroomDisplay from "@/assets/part-showroom-display.jpg";
 import part5axisRotary from "@/assets/part-5axis-rotary.jpg";
 
-import partPrecisionPlates from "@/assets/part-precision-plates.jpg";
+
 import partAluminumFrames from "@/assets/part-aluminum-frames.jpg";
 
 // Gallery ordered: most complex first, mix of 5-axis, turning, different materials
@@ -42,7 +42,7 @@ const galleryImages = [
   partSpindle,              // Turned spindle
   partFinnedRing,           // Finned turned component
   
-  partPrecisionPlates,      // Precision plates with micrometers
+  
   partAluminumFrames,       // Aluminum frame assemblies
   partBracket,              // Complex bracket
   partEnclosure,            // Deep pocket enclosure
