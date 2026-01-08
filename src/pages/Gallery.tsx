@@ -27,7 +27,7 @@ import part5axisDisc from "@/assets/part-5axis-disc.jpg";
 import partAnodizedTube from "@/assets/part-anodized-tube.jpg";
 import partShowroomDisplay from "@/assets/part-showroom-display.jpg";
 import part5axisRotary from "@/assets/part-5axis-rotary.jpg";
-import partFixturePlates from "@/assets/part-fixture-plates.jpg";
+
 import partPrecisionPlates from "@/assets/part-precision-plates.jpg";
 import partAluminumFrames from "@/assets/part-aluminum-frames.jpg";
 
@@ -41,7 +41,7 @@ const galleryImages = [
   part5axisRotary,          // 5-axis rotary bracket
   partSpindle,              // Turned spindle
   partFinnedRing,           // Finned turned component
-  partFixturePlates,        // Large fixture plates
+  
   partPrecisionPlates,      // Precision plates with micrometers
   partAluminumFrames,       // Aluminum frame assemblies
   partBracket,              // Complex bracket
