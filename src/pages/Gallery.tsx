@@ -22,7 +22,6 @@ import partTrioDiscs from "@/assets/part-trio-discs.jpg";
 import partComplexDisc from "@/assets/part-complex-disc.jpg";
 import partSpiralDisc from "@/assets/part-spiral-disc.jpg";
 // New complex parts - 5-axis, turning, different materials
-import partAerospaceBrackets from "@/assets/part-aerospace-brackets.jpg";
 import partImpellerTurning from "@/assets/part-impeller-turning.jpg";
 import part5axisDisc from "@/assets/part-5axis-disc.jpg";
 import partAnodizedTube from "@/assets/part-anodized-tube.jpg";
@@ -35,7 +34,6 @@ import partAluminumFrames from "@/assets/part-aluminum-frames.jpg";
 // Gallery ordered: most complex first, mix of 5-axis, turning, different materials
 const galleryImages = [
   // Most complex 5-axis + turning combos first
-  partAerospaceBrackets,    // Complex painted aerospace 5-axis brackets
   partImpellerTurning,      // Large impeller - turning + 5-axis combo
   part5axisDisc,            // Complex disc on 5-axis
   partShowroomDisplay,      // Showroom with copper plate + variety
@@ -71,7 +69,7 @@ const Gallery = () => {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <img 
-            src={partAerospaceBrackets} 
+            src={partImpellerTurning} 
             alt="Precision parts" 
             className="w-full h-full object-cover"
           />
@@ -91,6 +89,9 @@ const Gallery = () => {
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               Complex prototypes and precision parts we've manufactured. Our specialty is tackling the most difficult projects combining 5-axis milling and precision turning.
+            </p>
+            <p className="text-sm text-muted-foreground/70 mt-4 italic">
+              Note: All parts displayed are shown with customer clearance. We have produced work for many additional companies whose parts remain confidential.
             </p>
           </motion.div>
         </div>

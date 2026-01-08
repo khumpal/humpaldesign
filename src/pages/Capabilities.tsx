@@ -9,7 +9,7 @@ import partTurningTube from "@/assets/part-turning-tube.jpg";
 import partPlate2 from "@/assets/part-plate-2.jpg";
 import partAluminumFrames from "@/assets/part-aluminum-frames.jpg";
 import partFixturePlates from "@/assets/part-fixture-plates.jpg";
-import partAerospaceBrackets from "@/assets/part-aerospace-brackets.jpg";
+
 import partPrecisionPlates from "@/assets/part-precision-plates.jpg";
 
 const galleryImages = [
@@ -17,7 +17,7 @@ const galleryImages = [
   partTurningTube,
   partPlate2,
   partFixturePlates,
-  partAerospaceBrackets,
+  partAluminumFrames,
   partPrecisionPlates,
 ];
 
