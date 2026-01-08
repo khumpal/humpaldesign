@@ -49,6 +49,15 @@ import part1725 from "@/assets/part-1725.jpg";
 import part1735 from "@/assets/part-1735.jpg";
 import part1836 from "@/assets/part-1836.jpg";
 import part1982 from "@/assets/part-1982.jpg";
+// Final batch of complex parts
+import part1983 from "@/assets/part-1983.jpg";
+import part2495 from "@/assets/part-2495.jpg";
+import part2499 from "@/assets/part-2499.jpg";
+import part2501 from "@/assets/part-2501.jpg";
+import part2510 from "@/assets/part-2510.jpg";
+import part2759 from "@/assets/part-2759.jpg";
+import part2855 from "@/assets/part-2855.jpg";
+import part1820 from "@/assets/part-1820.jpg";
 // Gallery ordered: most complex first, mix of 5-axis, turning, different materials
 const galleryImages = [
   // Most complex 5-axis + turning combos first
@@ -90,6 +99,15 @@ const galleryImages = [
   partPlate2,               // Mounting plate
   partDisc,                 // Multi-feature disc
   partPlasticRing,          // Plastic - different material
+  // Final batch
+  part1983,                 // Complex part
+  part2495,                 // Complex part
+  part2499,                 // Complex part
+  part2501,                 // Complex part
+  part2510,                 // Complex part
+  part2759,                 // Complex part
+  part2855,                 // Complex part
+  part1820,                 // Complex part
   partHousing2,             // Instrument housing
   partTrioDiscs,            // Disc set
   partComplexDisc,          // Circular plate
