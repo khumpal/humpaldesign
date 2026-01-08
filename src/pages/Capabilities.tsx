@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import haas5Axis from "@/assets/haas-5axis.jpg";
 
 const galleryImages = [
   "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&q=80",
@@ -16,8 +17,8 @@ const galleryImages = [
 const capabilities = [
   {
     title: "5-Axis CNC Milling",
-    description: "Complex geometries with simultaneous 5-axis positioning using our UMC 750 for aerospace and medical parts.",
-    image: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&q=80",
+    description: "Complex geometries with simultaneous 5-axis positioning using our Haas UMC 750 for aerospace and medical parts.",
+    image: haas5Axis,
   },
   {
     title: "Precision Turning",
@@ -148,7 +149,7 @@ const Capabilities = () => {
             <p className="text-muted-foreground text-lg mb-8">
               Our engineering team can review your design and provide DFM feedback to optimize manufacturability.
             </p>
-            <Button asChild size="lg" className="bg-gradient-secondary hover:opacity-90 text-secondary-foreground font-semibold px-8">
+            <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-semibold px-8">
               <Link to="/quote">
                 Submit Your Project
                 <ArrowRight className="ml-2 w-5 h-5" />

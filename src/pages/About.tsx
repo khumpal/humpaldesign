@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Award, Users, Target, History } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import buildingExterior from "@/assets/building-exterior.jpg";
 
 const milestones = [
   { year: "2000", event: "Humpal Design Support founded in Silicon Valley" },
@@ -210,13 +211,13 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="aspect-video bg-card rounded-2xl border border-border flex items-center justify-center"
+              className="aspect-video bg-card rounded-2xl border border-border overflow-hidden"
             >
-              <div className="text-center p-8">
-                <p className="text-4xl mb-4">📍</p>
-                <p className="text-xl font-semibold text-foreground">Silicon Valley, CA</p>
-                <p className="text-muted-foreground">Serving the Bay Area since 2000</p>
-              </div>
+              <img 
+                src={buildingExterior} 
+                alt="Humpal Design Support facility exterior"
+                className="w-full h-full object-cover"
+              />
             </motion.div>
           </div>
         </div>
