@@ -20,6 +20,7 @@ import partImpellerStand from "@/assets/part-impeller-stand.jpg";
 import part5axisMachining from "@/assets/part-5axis-machining.jpg";
 import partContourMachining from "@/assets/part-contour-machining.jpg";
 import partPrecisionAssembly from "@/assets/part-precision-assembly.jpg";
+import partPrecisionPlate from "@/assets/part-precision-plate.jpg";
 
 
 const industries = [
@@ -215,7 +216,7 @@ const Index = () => {
             >
               <div className="aspect-square overflow-hidden rounded-2xl border border-border">
                 <img 
-                  src={part2501} 
+                  src={partPrecisionPlate} 
                   alt="Precision machined part" 
                   className="w-full h-full object-cover"
                 />
