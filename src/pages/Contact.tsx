@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import Layout from "@/components/layout/Layout";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const contactInfo = [
   {
@@ -38,14 +39,45 @@ const contactInfo = [
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    toast({
-      title: "Message Sent",
-      description: "We'll get back to you as soon as possible.",
-    });
+    setIsLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      type: "contact" as const,
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      company: formData.get("company") as string,
+      phone: formData.get("phone") as string,
+      subject: formData.get("subject") as string,
+      message: formData.get("message") as string,
+    };
+
+    try {
+      const { error } = await supabase.functions.invoke("send-contact-email", {
+        body: data,
+      });
+
+      if (error) throw error;
+
+      setIsSubmitted(true);
+      toast({
+        title: "Message Sent",
+        description: "We'll get back to you as soon as possible.",
+      });
+    } catch (error: any) {
+      console.error("Error sending message:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again or call us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -144,42 +176,52 @@ const Contact = () => {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="name">Your Name *</Label>
-                        <Input id="name" placeholder="John Smith" required />
+                        <Input id="name" name="name" placeholder="John Smith" required />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="email">Email Address *</Label>
-                        <Input id="email" type="email" placeholder="john@company.com" required />
+                        <Input id="email" name="email" type="email" placeholder="john@company.com" required />
                       </div>
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="company">Company Name</Label>
-                      <Input id="company" placeholder="Your Company" />
+                      <Input id="company" name="company" placeholder="Your Company" />
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="phone">Phone Number</Label>
-                      <Input id="phone" type="tel" placeholder="(510) 786-1683" />
+                      <Input id="phone" name="phone" type="tel" placeholder="(510) 786-1683" />
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="subject">Subject *</Label>
-                      <Input id="subject" placeholder="What's this about?" required />
+                      <Input id="subject" name="subject" placeholder="What's this about?" required />
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="message">Message *</Label>
                       <Textarea
                         id="message"
+                        name="message"
                         placeholder="How can we help you?"
                         rows={5}
                         required
                       />
                     </div>
 
-                    <Button type="submit" size="lg" className="w-full bg-gradient-secondary hover:opacity-90 text-secondary-foreground font-semibold">
-                      Send Message
-                      <Send className="ml-2 w-5 h-5" />
+                    <Button type="submit" size="lg" disabled={isLoading} className="w-full bg-gradient-secondary hover:opacity-90 text-secondary-foreground font-semibold">
+                      {isLoading ? (
+                        <>
+                          <Loader2 className="mr-2 w-5 h-5 animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          Send Message
+                          <Send className="ml-2 w-5 h-5" />
+                        </>
+                      )}
                     </Button>
                   </form>
                 </div>
