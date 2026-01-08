@@ -3,12 +3,19 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Plane, Stethoscope, Cpu, Factory, Shield, Microscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import partBracket from "@/assets/part-bracket.jpg";
+import partHousing1 from "@/assets/part-housing-1.jpg";
+import partHousing2 from "@/assets/part-housing-2.jpg";
+import partPlate1 from "@/assets/part-plate-1.jpg";
+import partPlate2 from "@/assets/part-plate-2.jpg";
+import partDisc from "@/assets/part-disc.jpg";
 
 const industries = [
   {
     icon: Plane,
     name: "Aerospace & Defense",
     description: "Precision components for aircraft, spacecraft, and defense systems requiring the highest standards of quality and traceability.",
+    image: partBracket,
     applications: [
       "Structural components",
       "Flight control systems",
@@ -23,6 +30,7 @@ const industries = [
     icon: Stethoscope,
     name: "Medical & Biotech",
     description: "Life-critical medical device components manufactured with strict adherence to FDA requirements and biocompatibility standards.",
+    image: partHousing1,
     applications: [
       "Surgical instruments",
       "Implant components",
@@ -37,6 +45,7 @@ const industries = [
     icon: Cpu,
     name: "Semiconductor & Technology",
     description: "Ultra-precision components for semiconductor manufacturing equipment and high-tech electronic systems.",
+    image: partPlate2,
     applications: [
       "Wafer handling",
       "Process chambers",
@@ -51,6 +60,7 @@ const industries = [
     icon: Factory,
     name: "General Manufacturing",
     description: "Versatile machining solutions for industrial equipment, automation systems, and commercial products.",
+    image: partDisc,
     applications: [
       "Automation components",
       "Robotic parts",
@@ -65,6 +75,7 @@ const industries = [
     icon: Microscope,
     name: "Research & Development",
     description: "Rapid prototyping and short-run production for R&D teams developing next-generation technologies.",
+    image: partHousing2,
     applications: [
       "Prototype parts",
       "Test fixtures",
@@ -79,6 +90,7 @@ const industries = [
     icon: Shield,
     name: "Energy & Clean Tech",
     description: "Components for renewable energy systems, power generation equipment, and sustainable technology.",
+    image: partPlate1,
     applications: [
       "Solar equipment",
       "Wind turbine parts",
@@ -96,7 +108,14 @@ const Industries = () => {
     <Layout>
       {/* Hero Section */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]" />
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src={partBracket} 
+            alt="Precision aerospace part" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/80" />
+        </div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -153,15 +172,24 @@ const Industries = () => {
                   </div>
                 </div>
 
-                <div className={`p-8 bg-card rounded-2xl border border-border ${index % 2 === 1 ? "lg:order-1" : ""}`}>
-                  <h3 className="text-xl font-semibold mb-6">Typical Applications</h3>
-                  <div className="grid grid-cols-2 gap-4">
-                    {industry.applications.map((app) => (
-                      <div key={app} className="flex items-center text-muted-foreground">
-                        <span className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0" />
-                        <span className="text-sm">{app}</span>
-                      </div>
-                    ))}
+                <div className={index % 2 === 1 ? "lg:order-1" : ""}>
+                  <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border mb-6">
+                    <img 
+                      src={industry.image} 
+                      alt={`${industry.name} precision part`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6 bg-card rounded-2xl border border-border">
+                    <h3 className="text-lg font-semibold mb-4">Typical Applications</h3>
+                    <div className="grid grid-cols-2 gap-3">
+                      {industry.applications.map((app) => (
+                        <div key={app} className="flex items-center text-muted-foreground">
+                          <span className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0" />
+                          <span className="text-sm">{app}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -213,7 +241,7 @@ const Industries = () => {
               Let's discuss how our precision machining capabilities can support your industry-specific needs.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg" className="bg-gradient-secondary hover:opacity-90 text-secondary-foreground font-semibold px-8">
+              <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-semibold px-8">
                 <Link to="/quote">
                   Request a Quote
                   <ArrowRight className="ml-2 w-5 h-5" />

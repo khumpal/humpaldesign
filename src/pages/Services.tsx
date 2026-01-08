@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { ArrowRight, Cog, Wrench, Cpu, Factory, Settings, Gauge } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import partBracket from "@/assets/part-bracket.jpg";
+import partHousing1 from "@/assets/part-housing-1.jpg";
+import partPlate2 from "@/assets/part-plate-2.jpg";
 
 const services = [
   {
@@ -95,7 +98,14 @@ const Services = () => {
     <Layout>
       {/* Hero Section */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]" />
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src={partBracket} 
+            alt="Precision part" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/80" />
+        </div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -112,6 +122,40 @@ const Services = () => {
               Comprehensive CNC machining services tailored to your needs, from rapid prototypes to high-volume production runs.
             </p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Featured Work Banner */}
+      <section className="py-8 border-y border-border">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="aspect-[16/9] rounded-xl overflow-hidden border border-border"
+            >
+              <img src={partBracket} alt="5-axis bracket" className="w-full h-full object-cover" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="aspect-[16/9] rounded-xl overflow-hidden border border-border"
+            >
+              <img src={partHousing1} alt="Precision housing" className="w-full h-full object-cover" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="aspect-[16/9] rounded-xl overflow-hidden border border-border"
+            >
+              <img src={partPlate2} alt="Mounting plate" className="w-full h-full object-cover" />
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -231,7 +275,7 @@ const Services = () => {
               <p className="text-muted-foreground mb-8">
                 Upload your CAD files and receive a detailed quote within 24 hours. Our team will review your design and provide feedback if needed.
               </p>
-              <Button asChild size="lg" className="w-full bg-gradient-secondary hover:opacity-90 text-secondary-foreground font-semibold">
+              <Button asChild size="lg" className="w-full bg-gradient-primary hover:opacity-90 text-primary-foreground font-semibold">
                 <Link to="/quote">
                   Request a Quote
                   <ArrowRight className="ml-2 w-5 h-5" />

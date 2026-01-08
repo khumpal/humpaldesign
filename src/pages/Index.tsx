@@ -4,7 +4,15 @@ import { ArrowRight, Shield, Clock, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import heroBackground from "@/assets/hero-background.gif";
-import machiningPart1 from "@/assets/machining-part-1.jpg";
+import partBracket from "@/assets/part-bracket.jpg";
+import partHousing1 from "@/assets/part-housing-1.jpg";
+import partHousing2 from "@/assets/part-housing-2.jpg";
+import partPlate1 from "@/assets/part-plate-1.jpg";
+import partPlate2 from "@/assets/part-plate-2.jpg";
+import partPlate3 from "@/assets/part-plate-3.jpg";
+import partDisc from "@/assets/part-disc.jpg";
+import partsCollection from "@/assets/parts-collection.jpg";
+
 const stats = [
   { number: "26+", label: "Years Experience" },
   { number: "1000+", label: "Projects Completed" },
@@ -20,12 +28,12 @@ const industries = [
 ];
 
 const galleryImages = [
-  "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&q=80",
-  "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80",
-  "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&q=80",
-  "https://images.unsplash.com/photo-1562408590-e32931084e23?w=600&q=80",
-  "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=600&q=80",
-  "https://images.unsplash.com/photo-1567789884554-0b844b597180?w=600&q=80",
+  partBracket,
+  partHousing1,
+  partPlate2,
+  partDisc,
+  partPlate3,
+  partsCollection,
 ];
 
 const Index = () => {
@@ -72,7 +80,7 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl text-muted-foreground mb-8 max-w-2xl leading-relaxed"
             >
-              Specializing in 5-axis milling with UMC 750 and precision turning with Okuma lathes for aerospace, medical, semiconductor, and advanced manufacturing industries.
+              Specializing in complex 5-axis milling and precision turning for aerospace, medical, semiconductor, and advanced manufacturing industries.
             </motion.p>
             
             <motion.div
@@ -81,7 +89,7 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-wrap gap-4"
             >
-              <Button asChild size="lg" className="bg-gradient-secondary hover:opacity-90 text-secondary-foreground font-semibold px-8">
+              <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-semibold px-8">
                 <Link to="/quote">
                   Request a Quote
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -127,7 +135,7 @@ const Index = () => {
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Work</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Precision parts manufactured for the most demanding industries.
+              Complex prototypes and precision parts manufactured for the most demanding industries.
             </p>
           </motion.div>
 
@@ -143,7 +151,7 @@ const Index = () => {
               >
                 <img 
                   src={image} 
-                  alt={`Machined part ${index + 1}`}
+                  alt={`Precision machined part ${index + 1}`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </motion.div>
@@ -210,8 +218,8 @@ const Index = () => {
             >
               <div className="aspect-square overflow-hidden rounded-2xl border border-border">
                 <img 
-                  src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80" 
-                  alt="Precision machining" 
+                  src={partHousing2} 
+                  alt="Precision machined housing" 
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -231,7 +239,7 @@ const Index = () => {
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Choose Humpal Design?</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Three generations of machining expertise combined with cutting-edge technology.
+              Decades of machining expertise combined with cutting-edge technology.
             </p>
           </motion.div>
 
@@ -241,19 +249,19 @@ const Index = () => {
                 icon: Award,
                 title: "26 Years Experience",
                 description: "Established in 2000, we bring decades of precision machining expertise to every project.",
-                image: machiningPart1,
+                image: partPlate1,
               },
               {
                 icon: Clock,
                 title: "Fast Turnaround",
                 description: "Rapid prototyping capabilities with quick quotes and expedited production options.",
-                image: "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=600&q=80",
+                image: partBracket,
               },
               {
                 icon: Shield,
                 title: "Quality Guaranteed",
                 description: "Rigorous inspection processes ensure every part meets your exact specifications.",
-                image: "https://images.unsplash.com/photo-1567789884554-0b844b597180?w=600&q=80",
+                image: partDisc,
               },
             ].map((item, index) => (
               <motion.div
@@ -288,8 +296,8 @@ const Index = () => {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&q=80" 
-            alt="CNC Machine" 
+            src={partsCollection} 
+            alt="Precision machined parts" 
             className="w-full h-full object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background to-background/90" />
@@ -306,7 +314,7 @@ const Index = () => {
               Get a quote within 24 hours. Upload your CAD files and let our team provide a detailed estimate.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg" className="bg-gradient-secondary hover:opacity-90 text-secondary-foreground font-semibold px-8">
+              <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-semibold px-8">
                 <Link to="/quote">
                   Request a Quote
                   <ArrowRight className="ml-2 w-5 h-5" />

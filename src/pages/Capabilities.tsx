@@ -3,37 +3,44 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
-import haas5Axis from "@/assets/haas-5axis.jpg";
+import partBracket from "@/assets/part-bracket.jpg";
+import partHousing1 from "@/assets/part-housing-1.jpg";
+import partHousing2 from "@/assets/part-housing-2.jpg";
+import partPlate1 from "@/assets/part-plate-1.jpg";
+import partPlate2 from "@/assets/part-plate-2.jpg";
+import partPlate3 from "@/assets/part-plate-3.jpg";
+import partDisc from "@/assets/part-disc.jpg";
+import partsCollection from "@/assets/parts-collection.jpg";
 
 const galleryImages = [
-  "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&q=80",
-  "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
-  "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80",
-  "https://images.unsplash.com/photo-1562408590-e32931084e23?w=800&q=80",
-  "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=800&q=80",
-  "https://images.unsplash.com/photo-1567789884554-0b844b597180?w=800&q=80",
+  partBracket,
+  partHousing1,
+  partPlate2,
+  partDisc,
+  partPlate3,
+  partsCollection,
 ];
 
 const capabilities = [
   {
     title: "5-Axis CNC Milling",
-    description: "Complex geometries with simultaneous 5-axis positioning using our Haas UMC 750 for aerospace and medical parts.",
-    image: haas5Axis,
+    description: "Complex geometries with simultaneous 5-axis positioning for aerospace, medical, and semiconductor parts.",
+    image: partBracket,
   },
   {
     title: "Precision Turning",
-    description: "Thread turning, complex profiles, and tight tolerances on turned components using Okuma lathes.",
-    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80",
+    description: "Thread turning, complex profiles, and tight tolerances on turned components.",
+    image: partHousing1,
   },
   {
-    title: "CNC Milling",
-    description: "High-precision milling for prototypes and production runs of any size.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
+    title: "Complex Prototyping",
+    description: "Our specialty is tackling the most difficult prototyping combining multiple machining operations.",
+    image: partPlate1,
   },
   {
-    title: "Rapid Prototyping",
-    description: "Fast turnaround from CAD files to finished parts for quick iteration.",
-    image: "https://images.unsplash.com/photo-1562408590-e32931084e23?w=800&q=80",
+    title: "Production Runs",
+    description: "From single prototypes to production quantities with consistent quality.",
+    image: partsCollection,
   },
 ];
 
@@ -44,8 +51,8 @@ const Capabilities = () => {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <img 
-            src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1920&q=80" 
-            alt="CNC Machining" 
+            src={partPlate2} 
+            alt="Precision machined plate" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/80" />
@@ -57,13 +64,13 @@ const Capabilities = () => {
             className="max-w-3xl"
           >
             <span className="inline-block px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm font-medium mb-6">
-              Our Equipment
+              What We Do
             </span>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-gradient">Capabilities</span> & Equipment
+              Our <span className="text-gradient">Capabilities</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              State-of-the-art CNC equipment including 5-axis milling with UMC 750 and Okuma lathes for precision turning.
+              Advanced 5-axis milling and precision turning for the most demanding applications. We excel at complex prototyping that others turn away.
             </p>
           </motion.div>
         </div>
