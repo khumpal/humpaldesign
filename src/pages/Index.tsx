@@ -13,12 +13,6 @@ import partPlate3 from "@/assets/part-plate-3.jpg";
 import partDisc from "@/assets/part-disc.jpg";
 import partsCollection from "@/assets/parts-collection.jpg";
 
-const stats = [
-  { number: "26+", label: "Years Experience" },
-  { number: "1000+", label: "Projects Completed" },
-  { number: "50+", label: "Active Clients" },
-  { number: "99.9%", label: "Quality Rate" },
-];
 
 const industries = [
   { name: "Aerospace & Defense", icon: "✈️" },
@@ -103,26 +97,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 border-y border-border bg-card/30">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">{stat.number}</div>
-                <div className="text-muted-foreground text-sm uppercase tracking-wider">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Photo Gallery Grid */}
       <section className="py-24">
