@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Upload, Send, CheckCircle } from "lucide-react";
+import { Upload, Send, CheckCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -8,19 +8,58 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Layout from "@/components/layout/Layout";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Quote = () => {
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [material, setMaterial] = useState("");
+  const [tolerance, setTolerance] = useState("");
+  const [timeline, setTimeline] = useState("");
+  const [finish, setFinish] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Simulate form submission
-    setIsSubmitted(true);
-    toast({
-      title: "Quote Request Submitted",
-      description: "We'll get back to you within 24 hours with a detailed quote.",
-    });
+    setIsLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      type: "quote" as const,
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      company: formData.get("company") as string,
+      phone: formData.get("phone") as string,
+      quantity: formData.get("quantity") as string,
+      material,
+      tolerance,
+      timeline,
+      finish,
+      description: formData.get("description") as string,
+    };
+
+    try {
+      const { error } = await supabase.functions.invoke("send-contact-email", {
+        body: data,
+      });
+
+      if (error) throw error;
+
+      setIsSubmitted(true);
+      toast({
+        title: "Quote Request Submitted",
+        description: "We'll get back to you within 24 hours with a detailed quote.",
+      });
+    } catch (error: any) {
+      console.error("Error sending quote request:", error);
+      toast({
+        title: "Error",
+        description: "Failed to submit quote request. Please try again or call us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (isSubmitted) {
@@ -91,19 +130,19 @@ const Quote = () => {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="name">Full Name *</Label>
-                      <Input id="name" placeholder="John Smith" required />
+                      <Input id="name" name="name" placeholder="John Smith" required />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="company">Company Name</Label>
-                      <Input id="company" placeholder="Your Company" />
+                      <Input id="company" name="company" placeholder="Your Company" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email">Email Address *</Label>
-                      <Input id="email" type="email" placeholder="john@company.com" required />
+                      <Input id="email" name="email" type="email" placeholder="john@company.com" required />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="phone">Phone Number</Label>
-                      <Input id="phone" type="tel" placeholder="(510) 786-1683" />
+                      <Input id="phone" name="phone" type="tel" placeholder="(510) 786-1683" />
                     </div>
                   </div>
                 </div>
@@ -115,11 +154,11 @@ const Quote = () => {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="quantity">Quantity *</Label>
-                        <Input id="quantity" type="number" placeholder="e.g., 100" required />
+                        <Input id="quantity" name="quantity" type="number" placeholder="e.g., 100" required />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="material">Material</Label>
-                        <Select>
+                        <Select value={material} onValueChange={setMaterial}>
                           <SelectTrigger>
                             <SelectValue placeholder="Select material" />
                           </SelectTrigger>
@@ -143,7 +182,7 @@ const Quote = () => {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="tolerance">Tolerance Requirements</Label>
-                        <Select>
+                        <Select value={tolerance} onValueChange={setTolerance}>
                           <SelectTrigger>
                             <SelectValue placeholder="Select tolerance" />
                           </SelectTrigger>
@@ -157,7 +196,7 @@ const Quote = () => {
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="timeline">Desired Timeline</Label>
-                        <Select>
+                        <Select value={timeline} onValueChange={setTimeline}>
                           <SelectTrigger>
                             <SelectValue placeholder="Select timeline" />
                           </SelectTrigger>
@@ -173,7 +212,7 @@ const Quote = () => {
 
                     <div className="space-y-2">
                       <Label htmlFor="finish">Surface Finish Requirements</Label>
-                      <Select>
+                      <Select value={finish} onValueChange={setFinish}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select surface finish" />
                         </SelectTrigger>
@@ -193,6 +232,7 @@ const Quote = () => {
                       <Label htmlFor="description">Project Description</Label>
                       <Textarea
                         id="description"
+                        name="description"
                         placeholder="Please describe your project, including any special requirements, certifications needed, or additional details..."
                         rows={5}
                       />
@@ -214,9 +254,18 @@ const Quote = () => {
                   </div>
                 </div>
 
-                <Button type="submit" size="lg" className="w-full bg-gradient-secondary hover:opacity-90 text-secondary-foreground font-semibold">
-                  Submit Quote Request
-                  <Send className="ml-2 w-5 h-5" />
+                <Button type="submit" size="lg" disabled={isLoading} className="w-full bg-gradient-secondary hover:opacity-90 text-secondary-foreground font-semibold">
+                  {isLoading ? (
+                    <>
+                      <Loader2 className="mr-2 w-5 h-5 animate-spin" />
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      Submit Quote Request
+                      <Send className="ml-2 w-5 h-5" />
+                    </>
+                  )}
                 </Button>
               </form>
             </motion.div>
