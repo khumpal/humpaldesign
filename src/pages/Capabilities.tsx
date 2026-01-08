@@ -93,7 +93,7 @@ const Capabilities = () => {
                   <img 
                     src={cap.image} 
                     alt={cap.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${cap.title === "Precision Turning" ? "object-contain bg-muted" : "object-cover"}`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
                 </div>

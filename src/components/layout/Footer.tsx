@@ -10,7 +10,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-12 h-12 bg-gradient-primary rounded flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl font-sans">HD</span>
+                <span className="text-primary-foreground font-bold text-lg font-sans">HDS</span>
               </div>
               <div>
                 <h3 className="text-lg font-bold text-foreground leading-tight">Humpal Design</h3>
@@ -63,15 +63,15 @@ const Footer = () => {
             <h4 className="text-foreground font-semibold mb-6">Contact Us</h4>
             <ul className="space-y-4">
               <li>
-                <a href="tel:+14085551234" className="flex items-start text-muted-foreground hover:text-primary transition-colors">
+                <a href="tel:+15107861683" className="flex items-start text-muted-foreground hover:text-primary transition-colors">
                   <Phone className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm">(408) 555-1234</span>
+                  <span className="text-sm">(510) 786-1683</span>
                 </a>
               </li>
               <li>
-                <a href="mailto:info@humpaldesign.com" className="flex items-start text-muted-foreground hover:text-primary transition-colors">
+                <a href="mailto:rajnish@humpaldesign.com" className="flex items-start text-muted-foreground hover:text-primary transition-colors">
                   <Mail className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm">info@humpaldesign.com</span>
+                  <span className="text-sm">rajnish@humpaldesign.com</span>
                 </a>
               </li>
               <li>

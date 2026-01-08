@@ -103,7 +103,7 @@ const Quote = () => {
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="phone">Phone Number</Label>
-                      <Input id="phone" type="tel" placeholder="(408) 555-1234" />
+                      <Input id="phone" type="tel" placeholder="(510) 786-1683" />
                     </div>
                   </div>
                 </div>
@@ -255,10 +255,10 @@ const Quote = () => {
                   For urgent projects or quick questions, give us a call directly.
                 </p>
                 <a
-                  href="tel:+14085551234"
+                  href="tel:+15107861683"
                   className="block w-full p-4 bg-primary/10 rounded-lg text-center text-primary font-semibold hover:bg-primary/20 transition-colors"
                 >
-                  (408) 555-1234
+                  (510) 786-1683
                 </a>
               </div>
 

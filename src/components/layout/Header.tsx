@@ -22,7 +22,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-gradient-primary rounded flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg font-sans">HD</span>
+              <span className="text-primary-foreground font-bold text-sm font-sans">HDS</span>
             </div>
             <div className="hidden sm:block">
               <h1 className="text-sm font-bold text-foreground leading-tight">Humpal Design</h1>

@@ -12,14 +12,14 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    value: "(408) 555-1234",
-    link: "tel:+14085551234",
+    value: "(510) 786-1683",
+    link: "tel:+15107861683",
   },
   {
     icon: Mail,
     title: "Email",
-    value: "info@humpaldesign.com",
-    link: "mailto:info@humpaldesign.com",
+    value: "rajnish@humpaldesign.com",
+    link: "mailto:rajnish@humpaldesign.com",
   },
   {
     icon: MapPin,
@@ -159,7 +159,7 @@ const Contact = () => {
 
                     <div className="space-y-2">
                       <Label htmlFor="phone">Phone Number</Label>
-                      <Input id="phone" type="tel" placeholder="(408) 555-1234" />
+                      <Input id="phone" type="tel" placeholder="(510) 786-1683" />
                     </div>
 
                     <div className="space-y-2">
@@ -189,53 +189,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-24 bg-card/50 border-t border-border">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p className="text-muted-foreground text-lg">Quick answers to common questions.</p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {[
-              {
-                q: "What is your typical turnaround time?",
-                a: "Standard turnaround is 2-3 weeks. We also offer expedited (1 week) and rush (1-3 days) options for urgent projects.",
-              },
-              {
-                q: "Do you offer design assistance?",
-                a: "Yes, our engineering team can provide DFM (Design for Manufacturability) feedback to help optimize your designs for production.",
-              },
-              {
-                q: "What industries do you serve?",
-                a: "We serve aerospace, medical, semiconductor, defense, and general manufacturing industries with precision machining services.",
-              },
-              {
-                q: "What file formats do you accept?",
-                a: "We accept STEP, IGES, DXF, DWG, SolidWorks, Parasolid, PDF, and STL files. Contact us if you have a different format.",
-              },
-            ].map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="p-6 bg-background rounded-xl border border-border"
-              >
-                <h3 className="font-semibold text-foreground mb-3">{faq.q}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{faq.a}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 };
