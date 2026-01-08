@@ -36,6 +36,7 @@ const galleryImages = [
 const testimonials = [
   {
     name: "Michael Regalbuto",
+    title: "Sr. Mechanical Design Engineer",
     text: "It has been my pleasure to work with Raj for over three years. The quality of his work is excellent, his prices are fair, and he makes his delivery commitments. I trust Raj to be able to manufacture my most complicated designs.",
     rating: 5,
   },
