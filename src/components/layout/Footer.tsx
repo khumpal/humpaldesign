@@ -75,10 +75,15 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <div className="flex items-start text-muted-foreground">
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=3338+Arden+Road+Hayward+CA+94544" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-start text-muted-foreground hover:text-primary transition-colors"
+                >
                   <MapPin className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm">Silicon Valley, CA</span>
-                </div>
+                  <span className="text-sm">3338 Arden Road<br />Hayward, CA 94544</span>
+                </a>
               </li>
             </ul>
           </div>
