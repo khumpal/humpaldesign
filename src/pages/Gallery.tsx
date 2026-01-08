@@ -21,26 +21,47 @@ import partPlasticRing from "@/assets/part-plastic-ring.jpg";
 import partTrioDiscs from "@/assets/part-trio-discs.jpg";
 import partComplexDisc from "@/assets/part-complex-disc.jpg";
 import partSpiralDisc from "@/assets/part-spiral-disc.jpg";
+// New complex parts - 5-axis, turning, different materials
+import partAerospaceBrackets from "@/assets/part-aerospace-brackets.jpg";
+import partImpellerTurning from "@/assets/part-impeller-turning.jpg";
+import part5axisDisc from "@/assets/part-5axis-disc.jpg";
+import partAnodizedTube from "@/assets/part-anodized-tube.jpg";
+import partShowroomDisplay from "@/assets/part-showroom-display.jpg";
+import part5axisRotary from "@/assets/part-5axis-rotary.jpg";
+import partFixturePlates from "@/assets/part-fixture-plates.jpg";
+import partPrecisionPlates from "@/assets/part-precision-plates.jpg";
+import partAluminumFrames from "@/assets/part-aluminum-frames.jpg";
 
+// Gallery ordered: most complex first, mix of 5-axis, turning, different materials
 const galleryImages = [
-  partFinnedRing,
-  partBracket,
-  partEnclosure,
-  partHeatsinkBox,
-  partHousing1,
-  partCouplers,
-  partStarWheels,
-  partPlate2,
-  partDisc,
-  partSpindle,
-  partPlasticRing,
-  partHousing2,
-  partTrioDiscs,
-  partComplexDisc,
-  partSpiralDisc,
-  partPlate1,
-  partPlate3,
-  partsCollection,
+  // Most complex 5-axis + turning combos first
+  partAerospaceBrackets,    // Complex painted aerospace 5-axis brackets
+  partImpellerTurning,      // Large impeller - turning + 5-axis combo
+  part5axisDisc,            // Complex disc on 5-axis
+  partShowroomDisplay,      // Showroom with copper plate + variety
+  partAnodizedTube,         // Anodized turned housing
+  part5axisRotary,          // 5-axis rotary bracket
+  partSpindle,              // Turned spindle
+  partFinnedRing,           // Finned turned component
+  partFixturePlates,        // Large fixture plates
+  partPrecisionPlates,      // Precision plates with micrometers
+  partAluminumFrames,       // Aluminum frame assemblies
+  partBracket,              // Complex bracket
+  partEnclosure,            // Deep pocket enclosure
+  partHeatsinkBox,          // Finned heatsink
+  partHousing1,             // Housing assembly
+  partCouplers,             // Couplers
+  partStarWheels,           // Star wheels
+  partPlate2,               // Mounting plate
+  partDisc,                 // Multi-feature disc
+  partPlasticRing,          // Plastic - different material
+  partHousing2,             // Instrument housing
+  partTrioDiscs,            // Disc set
+  partComplexDisc,          // Circular plate
+  partSpiralDisc,           // Spiral pattern
+  partPlate1,               // Large plate
+  partPlate3,               // Contoured ring
+  partsCollection,          // Collection
 ];
 
 const Gallery = () => {
@@ -50,7 +71,7 @@ const Gallery = () => {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <img 
-            src={partFinnedRing} 
+            src={partAerospaceBrackets} 
             alt="Precision parts" 
             className="w-full h-full object-cover"
           />
