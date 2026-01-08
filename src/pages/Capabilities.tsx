@@ -5,20 +5,20 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import partBracket from "@/assets/part-bracket.jpg";
 import partTurningTube from "@/assets/part-turning-tube.jpg";
-import partHousing2 from "@/assets/part-housing-2.jpg";
 import partPlate1 from "@/assets/part-plate-1.jpg";
 import partPlate2 from "@/assets/part-plate-2.jpg";
-import partPlate3 from "@/assets/part-plate-3.jpg";
-import partDisc from "@/assets/part-disc.jpg";
-import partsCollection from "@/assets/parts-collection.jpg";
+import partAluminumFrames from "@/assets/part-aluminum-frames.jpg";
+import partFixturePlates from "@/assets/part-fixture-plates.jpg";
+import partAerospaceBrackets from "@/assets/part-aerospace-brackets.jpg";
+import partPrecisionPlates from "@/assets/part-precision-plates.jpg";
 
 const galleryImages = [
   partBracket,
   partTurningTube,
   partPlate2,
-  partDisc,
-  partPlate3,
-  partsCollection,
+  partFixturePlates,
+  partAerospaceBrackets,
+  partPrecisionPlates,
 ];
 
 const capabilities = [
@@ -40,7 +40,7 @@ const capabilities = [
   {
     title: "Production Runs",
     description: "From single prototypes to production quantities with consistent quality.",
-    image: partsCollection,
+    image: partAluminumFrames,
   },
 ];
 
