@@ -2,8 +2,6 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
 
-
-
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
@@ -15,6 +13,35 @@ const RECIPIENT_EMAILS = [
   "karanshumpal@gmail.com",
   "gh103@yahoo.com",
 ];
+
+// Simple in-memory rate limiting (resets on function cold start)
+const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
+const RATE_LIMIT_MAX = 5; // Max requests per window
+const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour window
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const record = rateLimitMap.get(ip);
+  
+  if (!record || now > record.resetTime) {
+    rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW_MS });
+    return false;
+  }
+  
+  if (record.count >= RATE_LIMIT_MAX) {
+    return true;
+  }
+  
+  record.count++;
+  return false;
+}
+
+// Get client IP from request headers
+function getClientIP(req: Request): string {
+  return req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || 
+         req.headers.get("x-real-ip") || 
+         "unknown";
+}
 
 interface ContactFormRequest {
   type: "contact" | "quote";
@@ -40,8 +67,21 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
+    // Rate limiting check
+    const clientIP = getClientIP(req);
+    if (isRateLimited(clientIP)) {
+      console.warn(`Rate limit exceeded for IP: ${clientIP}`);
+      return new Response(
+        JSON.stringify({ error: "Too many requests. Please try again later." }),
+        {
+          status: 429,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
+    }
+
     const data: ContactFormRequest = await req.json();
-    console.log("Received form submission:", { ...data, email: "***" });
+    console.log("Received form submission:", { type: data.type, name: data.name?.substring(0, 20) });
 
     let emailSubject: string;
     let emailBody: string;
