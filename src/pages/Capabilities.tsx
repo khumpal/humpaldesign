@@ -10,7 +10,7 @@ import partPlate2 from "@/assets/part-plate-2.jpg";
 import partAluminumFrames from "@/assets/part-aluminum-frames.jpg";
 
 
-import partPrecisionPlates from "@/assets/part-precision-plates.jpg";
+
 
 const galleryImages = [
   part5axisDisc,
@@ -18,7 +18,7 @@ const galleryImages = [
   partPlate2,
   partTurningTube,
   partAluminumFrames,
-  partPrecisionPlates,
+  partPlate2,
 ];
 
 const capabilities = [
