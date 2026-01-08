@@ -8,12 +8,9 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
-// All recipient emails
-const RECIPIENT_EMAILS = [
-  "rajnish@humpaldesign.com",
-  "karanshumpal@gmail.com",
-  "gh103@yahoo.com",
-];
+// Recipient email (Resend free tier only allows sending to account owner's email)
+// To send to multiple recipients, verify a domain at resend.com/domains
+const RECIPIENT_EMAILS = ["karanshumpal@gmail.com"];
 
 // Simple in-memory rate limiting (resets on function cold start)
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
