@@ -20,7 +20,7 @@ import partStarWheels from "@/assets/part-star-wheels.jpg";
 import partPlasticRing from "@/assets/part-plastic-ring.jpg";
 import partTrioDiscs from "@/assets/part-trio-discs.jpg";
 import partComplexDisc from "@/assets/part-complex-disc.jpg";
-import partSpiralDisc from "@/assets/part-spiral-disc.jpg";
+
 // New complex parts - 5-axis, turning, different materials
 import partImpellerTurning from "@/assets/part-impeller-turning.jpg";
 import part5axisDisc from "@/assets/part-5axis-disc.jpg";
@@ -62,7 +62,6 @@ const galleryImages = [
   part5axisDisc,
   partTurnedHousings,
   part2759,
-  partSpiralDisc,
   partFinnedRing,
   part1836,
   partShowroomDisplay,
