@@ -26,10 +26,8 @@ const services = [
     title: "Precision CNC Turning",
     description: "High-precision turning for cylindrical parts, featuring thread cutting, grooving, and complex profile machining with exceptional accuracy.",
     features: [
-      "Live tooling capabilities",
       "Thread turning (internal & external)",
       "Complex profiles and contours",
-      "Bar feeding for production runs",
       "Tight tolerance work",
     ],
   },
