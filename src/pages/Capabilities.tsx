@@ -3,44 +3,44 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
-import partSpokedWheel from "@/assets/part-spoked-wheel.jpg";
-import partThreadedSpindle from "@/assets/part-threaded-spindle.jpg";
-import partTurbineDisc from "@/assets/part-turbine-disc.jpg";
-import partComplexContour1 from "@/assets/part-complex-contour-1.jpg";
-import partWheelHubs from "@/assets/part-wheel-hubs.jpg";
-import partFlangesArray from "@/assets/part-flanges-array.jpg";
-import partGearRing from "@/assets/part-gear-ring.jpg";
-import partEnclosureSet from "@/assets/part-enclosure-set.jpg";
+import partImpellerTurning from "@/assets/part-impeller-turning.jpg";
+import part5axisDisc from "@/assets/part-5axis-disc.jpg";
+import partAnodizedTube from "@/assets/part-anodized-tube.jpg";
+import partShowroomDisplay from "@/assets/part-showroom-display.jpg";
+import part5axisRotary from "@/assets/part-5axis-rotary.jpg";
+import partTurnedHousings from "@/assets/part-turned-housings.jpg";
+import partPlasticRings from "@/assets/part-plastic-rings.jpg";
+import partCurvedBrackets from "@/assets/part-curved-brackets.jpg";
 
 const galleryImages = [
-  partSpokedWheel,
-  partThreadedSpindle,
-  partTurbineDisc,
-  partWheelHubs,
-  partFlangesArray,
-  partGearRing,
+  partImpellerTurning,
+  part5axisDisc,
+  partAnodizedTube,
+  partTurnedHousings,
+  partPlasticRings,
+  part5axisRotary,
 ];
 
 const capabilities = [
   {
     title: "5-Axis CNC Milling",
     description: "Complex geometries with simultaneous 5-axis positioning for aerospace, medical, and semiconductor parts.",
-    image: partSpokedWheel,
+    image: part5axisDisc,
   },
   {
     title: "Precision Turning",
     description: "Thread turning, complex profiles, and tight tolerances on turned components.",
-    image: partThreadedSpindle,
+    image: partAnodizedTube,
   },
   {
     title: "Complex Prototyping",
     description: "Our specialty is tackling the most difficult prototyping combining multiple machining operations.",
-    image: partTurbineDisc,
+    image: partImpellerTurning,
   },
   {
     title: "Production Runs",
     description: "From single prototypes to production quantities with consistent quality.",
-    image: partFlangesArray,
+    image: partCurvedBrackets,
   },
 ];
 
@@ -51,7 +51,7 @@ const Capabilities = () => {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <img 
-            src={partComplexContour1} 
+            src={partShowroomDisplay} 
             alt="Precision machined part" 
             className="w-full h-full object-cover"
           />
