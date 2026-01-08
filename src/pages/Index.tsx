@@ -15,6 +15,8 @@ import part2759 from "@/assets/part-2759.jpg";
 import part1820 from "@/assets/part-1820.jpg";
 import partSpindle from "@/assets/part-spindle.jpg";
 import partFinnedRing from "@/assets/part-finned-ring.jpg";
+import partFixturePlates from "@/assets/part-fixture-plates.jpg";
+import partImpellerStand from "@/assets/part-impeller-stand.jpg";
 
 
 const industries = [
@@ -26,11 +28,11 @@ const industries = [
 
 const galleryImages = [
   part1735,
-  part1836,
-  part1982,
+  partFixturePlates,
+  part1820,
   part2499,
   part2759,
-  part1820,
+  partImpellerStand,
 ];
 
 const testimonials = [
