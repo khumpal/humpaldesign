@@ -4,15 +4,15 @@ import { ArrowRight, Shield, Clock, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import heroBackground from "@/assets/hero-background.gif";
-import partSpokedWheel from "@/assets/part-spoked-wheel.jpg";
-import partWheelHubs from "@/assets/part-wheel-hubs.jpg";
-import partThreadedSpindle from "@/assets/part-threaded-spindle.jpg";
-import partComplexContour1 from "@/assets/part-complex-contour-1.jpg";
-import partTurbineDisc from "@/assets/part-turbine-disc.jpg";
-import partGearRing from "@/assets/part-gear-ring.jpg";
-import partFlangesArray from "@/assets/part-flanges-array.jpg";
-import partCurvedBrackets from "@/assets/part-curved-brackets.jpg";
-import part2759 from "@/assets/part-2759.jpg";
+import part1983 from "@/assets/part-1983.jpg";
+import part2495 from "@/assets/part-2495.jpg";
+import part2499 from "@/assets/part-2499.jpg";
+import part2501 from "@/assets/part-2501.jpg";
+import part2510 from "@/assets/part-2510.jpg";
+import part2855 from "@/assets/part-2855.jpg";
+import part1820 from "@/assets/part-1820.jpg";
+import partSpindle from "@/assets/part-spindle.jpg";
+import partFinnedRing from "@/assets/part-finned-ring.jpg";
 
 
 const industries = [
@@ -23,12 +23,12 @@ const industries = [
 ];
 
 const galleryImages = [
-  partSpokedWheel,
-  partWheelHubs,
-  partComplexContour1,
-  partThreadedSpindle,
-  partTurbineDisc,
-  partGearRing,
+  part1983,
+  part2495,
+  part2499,
+  part2501,
+  part2510,
+  part2855,
 ];
 
 const Index = () => {
@@ -193,8 +193,8 @@ const Index = () => {
             >
               <div className="aspect-square overflow-hidden rounded-2xl border border-border">
                 <img 
-                  src={partFlangesArray} 
-                  alt="Precision machined flanges" 
+                  src={part1820} 
+                  alt="Precision machined part" 
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -224,19 +224,19 @@ const Index = () => {
                 icon: Award,
                 title: "26 Years Experience",
                 description: "Established in 2000, we bring decades of precision machining expertise to every project.",
-                image: partCurvedBrackets,
+                image: partSpindle,
               },
               {
                 icon: Clock,
                 title: "Fast Turnaround",
                 description: "Rapid prototyping capabilities with quick quotes and expedited production options.",
-                image: part2759,
+                image: partFinnedRing,
               },
               {
                 icon: Shield,
                 title: "Quality Guaranteed",
                 description: "Rigorous inspection processes ensure every part meets your exact specifications.",
-                image: partGearRing,
+                image: part2510,
               },
             ].map((item, index) => (
               <motion.div
@@ -271,7 +271,7 @@ const Index = () => {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src={partComplexContour1} 
+            src={part2495} 
             alt="Precision machined parts" 
             className="w-full h-full object-cover opacity-20"
           />
