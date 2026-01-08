@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Star, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import partBracket from "@/assets/part-bracket.jpg";
@@ -111,19 +111,6 @@ const galleryImages = [
   partPlate3,
 ];
 
-const testimonials = [
-  {
-    name: "Michael Regalbuto",
-    text: "It has been my pleasure to work with Raj for over three years. The quality of his work is excellent, his prices are fair, and he makes his delivery commitments. I trust Raj to be able to manufacture my most complicated designs. I appreciate his calls and visits to make sure the parts he makes work as expected.",
-    rating: 5,
-  },
-  {
-    name: "Lawson Fisher",
-    title: "VP Manufacturing, NovaTorque",
-    text: "I have been using Humpal Design for over 10 years. Consistently the highest quality parts delivered on time, even on very complex parts. Humpal stands by their work.",
-    rating: 5,
-  },
-];
 
 const Gallery = () => {
   return (
@@ -186,73 +173,6 @@ const Gallery = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-24 bg-card/50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <span className="inline-block px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm font-medium mb-6">
-              Customer Reviews
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              What Our <span className="text-gradient">Clients Say</span>
-            </h2>
-            <div className="flex items-center justify-center gap-1 mb-2">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-6 h-6 fill-primary text-primary" />
-              ))}
-            </div>
-            <p className="text-muted-foreground">5.0 Rating</p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-card border border-border rounded-2xl p-8"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                  ))}
-                </div>
-                <p className="text-muted-foreground mb-6 italic">"{testimonial.text}"</p>
-                <div>
-                  <p className="font-semibold text-foreground">{testimonial.name}</p>
-                  {testimonial.title && (
-                    <p className="text-sm text-muted-foreground">{testimonial.title}</p>
-                  )}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <a 
-              href="https://www.manta.com/c/mmbq285/humpal-design-support" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center text-primary hover:underline"
-            >
-              See more reviews on Manta
-              <ExternalLink className="w-4 h-4 ml-1" />
-            </a>
-          </motion.div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-24">
