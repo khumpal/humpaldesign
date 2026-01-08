@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Cog, Wrench, Cpu, Factory, Settings, Gauge } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
-import partFixturePlates from "@/assets/part-fixture-plates.jpg";
+import partImpellerTurning from "@/assets/part-impeller-turning.jpg";
 import partShowroomDisplay from "@/assets/part-showroom-display.jpg";
 import partGearShaft from "@/assets/part-gear-shaft.jpg";
 
@@ -90,7 +90,7 @@ const Services = () => {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img 
-            src={partFixturePlates} 
+            src={partImpellerTurning} 
             alt="Precision part" 
             className="w-full h-full object-cover"
           />
@@ -125,7 +125,7 @@ const Services = () => {
               viewport={{ once: true }}
               className="aspect-[16/9] rounded-xl overflow-hidden border border-border"
             >
-              <img src={partFixturePlates} alt="Fixture plates" className="w-full h-full object-cover" />
+              <img src={partImpellerTurning} alt="Precision turning" className="w-full h-full object-cover" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

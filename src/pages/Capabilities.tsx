@@ -8,7 +8,7 @@ import part5axisRotary from "@/assets/part-5axis-rotary.jpg";
 import partTurningTube from "@/assets/part-turning-tube.jpg";
 import partPlate2 from "@/assets/part-plate-2.jpg";
 import partAluminumFrames from "@/assets/part-aluminum-frames.jpg";
-import partFixturePlates from "@/assets/part-fixture-plates.jpg";
+
 
 import partPrecisionPlates from "@/assets/part-precision-plates.jpg";
 
@@ -16,7 +16,7 @@ const galleryImages = [
   part5axisDisc,
   partTurningTube,
   partPlate2,
-  partFixturePlates,
+  partTurningTube,
   partAluminumFrames,
   partPrecisionPlates,
 ];
