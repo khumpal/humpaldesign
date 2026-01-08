@@ -9,7 +9,7 @@ import partHousing1 from "@/assets/part-housing-1.jpg";
 import partHousing2 from "@/assets/part-housing-2.jpg";
 import partDisc from "@/assets/part-disc.jpg";
 import partsCollection from "@/assets/parts-collection.jpg";
-import partAerospaceBrackets from "@/assets/part-aerospace-brackets.jpg";
+
 import partTrioHousings from "@/assets/part-trio-housings.jpg";
 import partImpellerStand from "@/assets/part-impeller-stand.jpg";
 import partTurnedHub from "@/assets/part-turned-hub.jpg";
@@ -27,7 +27,7 @@ const galleryImages = [
   partBracket,
   partHousing1,
   partDisc,
-  partAerospaceBrackets,
+  partTurnedHub,
   partTrioHousings,
   partImpellerStand,
 ];
