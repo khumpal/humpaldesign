@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
-import partBracket from "@/assets/part-bracket.jpg";
+import part5axisRotary from "@/assets/part-5axis-rotary.jpg";
 import partTurningTube from "@/assets/part-turning-tube.jpg";
 import partPlate1 from "@/assets/part-plate-1.jpg";
 import partPlate2 from "@/assets/part-plate-2.jpg";
@@ -13,7 +13,7 @@ import partAerospaceBrackets from "@/assets/part-aerospace-brackets.jpg";
 import partPrecisionPlates from "@/assets/part-precision-plates.jpg";
 
 const galleryImages = [
-  partBracket,
+  part5axisRotary,
   partTurningTube,
   partPlate2,
   partFixturePlates,
@@ -25,7 +25,7 @@ const capabilities = [
   {
     title: "5-Axis CNC Milling",
     description: "Complex geometries with simultaneous 5-axis positioning for aerospace, medical, and semiconductor parts.",
-    image: partBracket,
+    image: part5axisRotary,
   },
   {
     title: "Precision Turning",
