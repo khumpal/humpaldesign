@@ -3,102 +3,42 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Plane, Stethoscope, Cpu, Factory, Shield, Microscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
-import partBracket from "@/assets/part-bracket.jpg";
-import partHousing1 from "@/assets/part-housing-1.jpg";
-import partHousing2 from "@/assets/part-housing-2.jpg";
-import partPlate1 from "@/assets/part-plate-1.jpg";
-import partPlate2 from "@/assets/part-plate-2.jpg";
-import partDisc from "@/assets/part-disc.jpg";
 
 const industries = [
   {
     icon: Plane,
     name: "Aerospace & Defense",
     description: "Precision components for aircraft, spacecraft, and defense systems requiring the highest standards of quality and traceability.",
-    image: partBracket,
-    applications: [
-      "Structural components",
-      "Flight control systems",
-      "Engine components",
-      "Satellite hardware",
-      "UAV parts",
-      "Military equipment",
-    ],
     standards: ["AS9100 capable", "ITAR registered", "Full traceability"],
   },
   {
     icon: Stethoscope,
     name: "Medical & Biotech",
     description: "Life-critical medical device components manufactured with strict adherence to FDA requirements and biocompatibility standards.",
-    image: partHousing1,
-    applications: [
-      "Surgical instruments",
-      "Implant components",
-      "Diagnostic equipment",
-      "Laboratory devices",
-      "Dental equipment",
-      "Prosthetic parts",
-    ],
     standards: ["ISO 13485 capable", "FDA compliant", "Clean room compatible"],
   },
   {
     icon: Cpu,
     name: "Semiconductor & Technology",
     description: "Ultra-precision components for semiconductor manufacturing equipment and high-tech electronic systems.",
-    image: partPlate2,
-    applications: [
-      "Wafer handling",
-      "Process chambers",
-      "Test fixtures",
-      "Optical systems",
-      "Vacuum components",
-      "Electronic housings",
-    ],
     standards: ["Clean manufacturing", "Ultra-tight tolerances", "Contamination control"],
   },
   {
     icon: Factory,
     name: "General Manufacturing",
     description: "Versatile machining solutions for industrial equipment, automation systems, and commercial products.",
-    image: partDisc,
-    applications: [
-      "Automation components",
-      "Robotic parts",
-      "Industrial machinery",
-      "Tooling & fixtures",
-      "Custom equipment",
-      "Production parts",
-    ],
     standards: ["ISO 9001 capable", "SPC monitoring", "Flexible volumes"],
   },
   {
     icon: Microscope,
     name: "Research & Development",
     description: "Rapid prototyping and short-run production for R&D teams developing next-generation technologies.",
-    image: partHousing2,
-    applications: [
-      "Prototype parts",
-      "Test fixtures",
-      "Lab equipment",
-      "Experimental hardware",
-      "Research instruments",
-      "One-off designs",
-    ],
     standards: ["Fast turnaround", "Design feedback", "Iteration support"],
   },
   {
     icon: Shield,
     name: "Energy & Clean Tech",
     description: "Components for renewable energy systems, power generation equipment, and sustainable technology.",
-    image: partPlate1,
-    applications: [
-      "Solar equipment",
-      "Wind turbine parts",
-      "Battery systems",
-      "Power electronics",
-      "Grid equipment",
-      "EV components",
-    ],
     standards: ["Durability testing", "Environmental compliance", "High reliability"],
   },
 ];
@@ -108,14 +48,7 @@ const Industries = () => {
     <Layout>
       {/* Hero Section */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img 
-            src={partBracket} 
-            alt="Precision aerospace part" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/80" />
-        </div>
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]" />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -138,59 +71,32 @@ const Industries = () => {
       {/* Industries Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="space-y-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {industries.map((industry, index) => (
               <motion.div
                 key={industry.name}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className={`grid lg:grid-cols-2 gap-12 items-center ${
-                  index % 2 === 1 ? "lg:flex-row-reverse" : ""
-                }`}
+                transition={{ delay: index * 0.1 }}
+                className="p-8 bg-card rounded-2xl border border-border hover:border-primary/30 transition-colors"
               >
-                <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center">
-                      <industry.icon className="w-8 h-8 text-primary" />
-                    </div>
-                    <h2 className="text-3xl md:text-4xl font-bold">{industry.name}</h2>
-                  </div>
-                  <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                    {industry.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {industry.standards.map((standard) => (
-                      <span
-                        key={standard}
-                        className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full"
-                      >
-                        {standard}
-                      </span>
-                    ))}
-                  </div>
+                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                  <industry.icon className="w-7 h-7 text-primary" />
                 </div>
-
-                <div className={index % 2 === 1 ? "lg:order-1" : ""}>
-                  <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border mb-6">
-                    <img 
-                      src={industry.image} 
-                      alt={`${industry.name} precision part`}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-6 bg-card rounded-2xl border border-border">
-                    <h3 className="text-lg font-semibold mb-4">Typical Applications</h3>
-                    <div className="grid grid-cols-2 gap-3">
-                      {industry.applications.map((app) => (
-                        <div key={app} className="flex items-center text-muted-foreground">
-                          <span className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0" />
-                          <span className="text-sm">{app}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                <h2 className="text-2xl font-bold mb-4">{industry.name}</h2>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  {industry.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {industry.standards.map((standard) => (
+                    <span
+                      key={standard}
+                      className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                    >
+                      {standard}
+                    </span>
+                  ))}
                 </div>
               </motion.div>
             ))}
