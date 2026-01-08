@@ -39,7 +39,16 @@ import partTurbineDisc from "@/assets/part-turbine-disc.jpg";
 import partCurvedBrackets from "@/assets/part-curved-brackets.jpg";
 import partGearRing from "@/assets/part-gear-ring.jpg";
 import partSpokedDisc from "@/assets/part-spoked-disc.jpg";
-
+// More complex parts
+import partRadialDisc from "@/assets/part-radial-disc.jpg";
+import partThreadedSpindle from "@/assets/part-threaded-spindle.jpg";
+import partFlangesArray from "@/assets/part-flanges-array.jpg";
+import partEnclosureSet from "@/assets/part-enclosure-set.jpg";
+import partWheelHubs from "@/assets/part-wheel-hubs.jpg";
+import part1725 from "@/assets/part-1725.jpg";
+import part1735 from "@/assets/part-1735.jpg";
+import part1836 from "@/assets/part-1836.jpg";
+import part1982 from "@/assets/part-1982.jpg";
 // Gallery ordered: most complex first, mix of 5-axis, turning, different materials
 const galleryImages = [
   // Most complex 5-axis + turning combos first
@@ -61,6 +70,16 @@ const galleryImages = [
   partCurvedBrackets,       // Curved structural brackets
   partGearRing,             // Gear ring with teeth
   partSpokedDisc,           // Spoked disc on stand
+  // More complex parts batch 2
+  partRadialDisc,           // Radial spoked disc
+  partThreadedSpindle,      // Threaded spindle with splines
+  partFlangesArray,         // Production run of flanges
+  partEnclosureSet,         // Enclosure component set
+  partWheelHubs,            // Wheel hub assemblies
+  part1725,                 // Complex part
+  part1735,                 // Complex part
+  part1836,                 // Complex part
+  part1982,                 // Complex part
   partAluminumFrames,       // Aluminum frame assemblies
   partBracket,              // Complex bracket
   partEnclosure,            // Deep pocket enclosure
