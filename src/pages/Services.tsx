@@ -82,16 +82,6 @@ const services = [
   },
 ];
 
-const materials = [
-  {
-    category: "Metals",
-    items: ["Aluminum (6061, 7075, 2024)", "Stainless Steel (303, 304, 316, 17-4PH)", "Steel (1018, 4140, A2, D2)", "Titanium", "Brass & Bronze", "Copper", "Inconel", "Tool Steels"],
-  },
-  {
-    category: "Plastics",
-    items: ["Delrin/Acetal", "PEEK", "Ultem", "Nylon", "HDPE/UHMW", "Polycarbonate", "Acrylic", "PTFE/Teflon"],
-  },
-];
 
 const Services = () => {
   return (
@@ -191,98 +181,53 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Materials Section */}
+      {/* Materials & Files Section */}
       <section className="py-24 bg-card/50 border-y border-border">
         <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="p-8 bg-background rounded-2xl border border-border"
+            >
+              <h3 className="text-2xl font-bold mb-4">Materials We Work With</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Over our 26 years in business, we've machined virtually every material imaginable — from common aluminum and steel alloys to exotic metals like titanium and Inconel, as well as engineering plastics. Whatever your project requires, we have the experience to handle it.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="p-8 bg-background rounded-2xl border border-border"
+            >
+              <h3 className="text-2xl font-bold mb-4">File Formats Accepted</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                We accept all major CAD file formats. Send us your files in whatever format you have — STEP, IGES, SolidWorks, DXF, PDF drawings, or any other format — and we'll take care of the rest.
+              </p>
+            </motion.div>
+          </div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="max-w-2xl mx-auto text-center mt-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Materials We Work With</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Expertise in machining a wide range of metals and plastics to meet your project requirements.
+            <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
+            <p className="text-muted-foreground mb-8">
+              Upload your CAD files and receive a detailed quote within 24 hours.
             </p>
+            <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-semibold px-8">
+              <Link to="/quote">
+                Request a Quote
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+            </Button>
           </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            {materials.map((group, index) => (
-              <motion.div
-                key={group.category}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="p-8 bg-background rounded-2xl border border-border"
-              >
-                <h3 className="text-2xl font-bold mb-6 text-gradient">{group.category}</h3>
-                <ul className="grid grid-cols-2 gap-3">
-                  {group.items.map((item) => (
-                    <li key={item} className="text-sm text-muted-foreground flex items-center">
-                      <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2 flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center text-muted-foreground mt-8"
-          >
-            Don't see your material? <Link to="/contact" className="text-primary hover:underline">Contact us</Link> – we likely work with it.
-          </motion.p>
-        </div>
-      </section>
-
-      {/* File Formats */}
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl font-bold mb-6">File Formats Accepted</h2>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                We accept a wide variety of CAD file formats. Send us your files and we'll provide a detailed quote quickly.
-              </p>
-              <div className="grid grid-cols-3 gap-4">
-                {["STEP", "IGES", "DXF", "DWG", "SolidWorks", "PDF", "Parasolid", "STL", "SAT"].map((format) => (
-                  <div
-                    key={format}
-                    className="p-3 bg-card rounded-lg border border-border text-center"
-                  >
-                    <span className="text-sm font-medium text-foreground">{format}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="p-8 bg-card rounded-2xl border border-border"
-            >
-              <h3 className="text-2xl font-bold mb-6">Ready to Get Started?</h3>
-              <p className="text-muted-foreground mb-8">
-                Upload your CAD files and receive a detailed quote within 24 hours. Our team will review your design and provide feedback if needed.
-              </p>
-              <Button asChild size="lg" className="w-full bg-gradient-primary hover:opacity-90 text-primary-foreground font-semibold">
-                <Link to="/quote">
-                  Request a Quote
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-              </Button>
-            </motion.div>
-          </div>
         </div>
       </section>
     </Layout>
