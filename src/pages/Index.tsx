@@ -23,6 +23,7 @@ import partPrecisionAssembly from "@/assets/part-precision-assembly.jpg";
 import partPrecisionPlate from "@/assets/part-precision-plate.jpg";
 import partCopperDisc from "@/assets/part-copper-disc.jpg";
 import partSpiralCopper from "@/assets/part-spiral-copper.jpg";
+import partSpokedHub from "@/assets/part-spoked-hub.jpg";
 
 
 const industries = [
@@ -40,7 +41,7 @@ const galleryImages = [
   partPrecisionAssembly,
   partImpellerStand,
   part2499,
-  part1836,
+  partSpokedHub,
   partSpiralCopper,
 ];
 
