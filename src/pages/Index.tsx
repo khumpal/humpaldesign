@@ -21,6 +21,8 @@ import part5axisMachining from "@/assets/part-5axis-machining.jpg";
 import partContourMachining from "@/assets/part-contour-machining.jpg";
 import partPrecisionAssembly from "@/assets/part-precision-assembly.jpg";
 import partPrecisionPlate from "@/assets/part-precision-plate.jpg";
+import partCopperDisc from "@/assets/part-copper-disc.jpg";
+import partSpiralCopper from "@/assets/part-spiral-copper.jpg";
 
 
 const industries = [
@@ -32,11 +34,11 @@ const industries = [
 
 const galleryImages = [
   part1735,
-  part5axisMachining,
+  partCopperDisc,
   partContourMachining,
   part2499,
   partPrecisionAssembly,
-  partImpellerStand,
+  partSpiralCopper,
 ];
 
 const testimonials = [

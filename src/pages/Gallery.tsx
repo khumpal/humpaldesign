@@ -57,12 +57,16 @@ import part2510 from "@/assets/part-2510.jpg";
 import part2759 from "@/assets/part-2759.jpg";
 import part2855 from "@/assets/part-2855.jpg";
 import part1820 from "@/assets/part-1820.jpg";
+import partCopperDisc from "@/assets/part-copper-disc.jpg";
+import partSpiralCopper from "@/assets/part-spiral-copper.jpg";
+
 // Gallery - shuffled for variety
 const galleryImages = [
   part5axisDisc,
   partTurnedHousings,
   part2759,
   partFinnedRing,
+  partCopperDisc,
   part1836,
   partShowroomDisplay,
   partCouplers,
@@ -77,6 +81,7 @@ const galleryImages = [
   partSpokedWheel,
   partAnodizedTube,
   part2510,
+  partSpiralCopper,
   partCurvedBrackets,
   partHousing1,
   partTurbineDisc,
