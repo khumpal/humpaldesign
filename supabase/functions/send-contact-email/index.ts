@@ -17,23 +17,55 @@ const RECIPIENT_EMAILS = [
 
 // Simple in-memory rate limiting (resets on function cold start)
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
-const RATE_LIMIT_MAX = 5; // Max requests per window
+const RATE_LIMIT_MAX = 3; // Max requests per window (stricter limit)
 const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour window
+
+// Daily limit tracking
+const dailyLimitMap = new Map<string, { count: number; resetTime: number }>();
+const DAILY_LIMIT_MAX = 10; // Max requests per day
+const DAILY_LIMIT_WINDOW_MS = 24 * 60 * 60 * 1000; // 24 hours
 
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
-  const record = rateLimitMap.get(ip);
   
-  if (!record || now > record.resetTime) {
+  // Check hourly limit
+  const hourlyRecord = rateLimitMap.get(ip);
+  if (!hourlyRecord || now > hourlyRecord.resetTime) {
     rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW_MS });
-    return false;
+  } else if (hourlyRecord.count >= RATE_LIMIT_MAX) {
+    return true;
+  } else {
+    hourlyRecord.count++;
   }
   
-  if (record.count >= RATE_LIMIT_MAX) {
+  // Check daily limit
+  const dailyRecord = dailyLimitMap.get(ip);
+  if (!dailyRecord || now > dailyRecord.resetTime) {
+    dailyLimitMap.set(ip, { count: 1, resetTime: now + DAILY_LIMIT_WINDOW_MS });
+  } else if (dailyRecord.count >= DAILY_LIMIT_MAX) {
+    return true;
+  } else {
+    dailyRecord.count++;
+  }
+  
+  return false;
+}
+
+// Honeypot check - bots often fill hidden fields
+function isBot(data: Record<string, unknown>): boolean {
+  // Check for honeypot field - should be empty if human
+  if (data.website && String(data.website).trim() !== "") {
     return true;
   }
-  
-  record.count++;
+  // Check timing - submissions too fast are likely bots
+  if (data._formTime) {
+    const formTime = Number(data._formTime);
+    const now = Date.now();
+    // If form was submitted in less than 3 seconds, likely a bot
+    if (!isNaN(formTime) && (now - formTime) < 3000) {
+      return true;
+    }
+  }
   return false;
 }
 
@@ -98,6 +130,16 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     const rawData = await req.json();
+    
+    // Bot detection via honeypot
+    if (isBot(rawData)) {
+      console.warn(`Bot detected from IP: ${clientIP}`);
+      // Return success to not reveal bot detection to attacker
+      return new Response(JSON.stringify({ success: true }), {
+        status: 200,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
     
     // Validate and sanitize input
     const parseResult = contactFormSchema.safeParse(rawData);

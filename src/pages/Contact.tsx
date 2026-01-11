@@ -40,6 +40,7 @@ const Contact = () => {
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [formLoadTime] = useState(Date.now());
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -54,6 +55,9 @@ const Contact = () => {
       phone: formData.get("phone") as string,
       subject: formData.get("subject") as string,
       message: formData.get("message") as string,
+      // Honeypot fields for bot detection
+      website: formData.get("website") as string,
+      _formTime: formLoadTime,
     };
 
     try {
@@ -208,6 +212,12 @@ const Contact = () => {
                         rows={5}
                         required
                       />
+                    </div>
+
+                    {/* Honeypot field - hidden from real users */}
+                    <div className="absolute -left-[9999px]" aria-hidden="true">
+                      <Label htmlFor="website">Website</Label>
+                      <Input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
                     </div>
 
                     <Button type="submit" size="lg" disabled={isLoading} className="w-full bg-gradient-secondary hover:opacity-90 text-secondary-foreground font-semibold">
