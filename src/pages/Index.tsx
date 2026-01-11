@@ -34,10 +34,13 @@ const industries = [
 
 const galleryImages = [
   part1735,
-  partCopperDisc,
+  part5axisMachining,
   partContourMachining,
-  part2499,
+  partCopperDisc,
   partPrecisionAssembly,
+  partImpellerStand,
+  part2499,
+  part1836,
   partSpiralCopper,
 ];
 
