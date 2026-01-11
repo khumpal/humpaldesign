@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Phone, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import hdsLogo from "@/assets/hds-logo.png";
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -23,13 +24,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-primary rounded flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm font-sans">HDS</span>
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="text-sm font-bold text-foreground leading-tight">Humpal Design</h1>
-              <p className="text-xs text-muted-foreground uppercase tracking-wider">Support</p>
-            </div>
+            <img 
+              src={hdsLogo} 
+              alt="HDS - Humpal Design Support" 
+              className="h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
