@@ -27,7 +27,7 @@ const Header = () => {
             <img 
               src={hdsLogo} 
               alt="HDS - Humpal Design Support" 
-              className="h-12 w-auto"
+              className="h-12 w-auto brightness-125 contrast-110"
             />
           </Link>
 
