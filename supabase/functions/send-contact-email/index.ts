@@ -10,7 +10,7 @@ const corsHeaders = {
 
 // All recipient emails
 const RECIPIENT_EMAILS = [
-  "rajnish@humpaldesign.com",
+  "info@humpaldesign.com",
   "karanshumpal@gmail.com",
   "gh103@yahoo.com",
 ];
