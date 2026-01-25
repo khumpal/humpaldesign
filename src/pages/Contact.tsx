@@ -19,8 +19,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "rajnish@humpaldesign.com",
-    link: "mailto:rajnish@humpaldesign.com",
+    value: "info@humpaldesign.com",
+    link: "mailto:info@humpaldesign.com",
   },
   {
     icon: MapPin,

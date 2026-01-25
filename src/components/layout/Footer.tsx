@@ -69,9 +69,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:rajnish@humpaldesign.com" className="flex items-start text-muted-foreground hover:text-primary transition-colors">
+                <a href="mailto:info@humpaldesign.com" className="flex items-start text-muted-foreground hover:text-primary transition-colors">
                   <Mail className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm">rajnish@humpaldesign.com</span>
+                  <span className="text-sm">info@humpaldesign.com</span>
                 </a>
               </li>
               <li>
