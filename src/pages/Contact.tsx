@@ -31,53 +31,10 @@ const contactInfo = [
   },
 ];
 
+const CONTACT_MAILTO = "mailto:karan@humpaldesign.com?subject=Website%20Inquiry";
+
 const Contact = () => {
-  const { toast } = useToast();
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [formLoadTime] = useState(Date.now());
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsLoading(true);
-
-    const formData = new FormData(e.currentTarget);
-    const data = {
-      type: "contact" as const,
-      name: formData.get("name") as string,
-      email: formData.get("email") as string,
-      company: formData.get("company") as string,
-      phone: formData.get("phone") as string,
-      subject: formData.get("subject") as string,
-      message: formData.get("message") as string,
-      // Honeypot fields for bot detection
-      website: formData.get("website") as string,
-      _formTime: formLoadTime,
-    };
-
-    try {
-      const { error } = await supabase.functions.invoke("send-contact-email", {
-        body: data,
-      });
-
-      if (error) throw error;
-
-      setIsSubmitted(true);
-      toast({
-        title: "Message Sent",
-        description: "We'll get back to you as soon as possible.",
-      });
-    } catch (error: any) {
-      console.error("Error sending message:", error);
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again or call us directly.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   return (
     <Layout>
