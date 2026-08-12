@@ -25,7 +25,7 @@ const Quote = () => {
               Request a <span className="text-gradient">Quote</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Submit your project details and receive a detailed quote within 24 hours. Our team is ready to help bring your designs to reality.
+              Email us your project details and receive a detailed quote within 24 hours. Our team is ready to help bring your designs to reality.
             </p>
           </motion.div>
         </div>
@@ -90,7 +90,7 @@ const Quote = () => {
                 <h3 className="text-xl font-bold mb-6">What to Expect</h3>
                 <ul className="space-y-4">
                   {[
-                    { step: "1", text: "Submit your project details and files" },
+                    { step: "1", text: "Email your project details and files" },
                     { step: "2", text: "Our team reviews within 24 hours" },
                     { step: "3", text: "Receive detailed quote with pricing" },
                     { step: "4", text: "Approve and we start production" },
