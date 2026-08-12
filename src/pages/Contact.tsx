@@ -149,89 +149,48 @@ const Contact = () => {
               </div>
             </motion.div>
 
-            {/* Contact Form */}
+            {/* Email CTA */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1 }}
             >
-              {isSubmitted ? (
-                <div className="p-8 bg-card rounded-2xl border border-border text-center">
-                  <div className="w-16 h-16 mx-auto bg-green-500/10 rounded-full flex items-center justify-center mb-6">
-                    <CheckCircle className="w-8 h-8 text-green-500" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4">Message Sent!</h3>
-                  <p className="text-muted-foreground mb-6">
-                    Thank you for reaching out. We'll get back to you as soon as possible.
-                  </p>
-                  <Button onClick={() => setIsSubmitted(false)} variant="outline">
-                    Send Another Message
+              <div className="p-8 md:p-10 bg-card rounded-2xl border border-border">
+                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                  <Mail className="w-7 h-7 text-primary" />
+                </div>
+                <h2 className="text-2xl font-bold mb-4">Send Us a Message</h2>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  Email us with your question or project details and our team will get back to you as soon as possible.
+                  Feel free to attach drawings or specifications.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-gradient-secondary hover:opacity-90 text-secondary-foreground font-semibold"
+                  >
+                    <a href={CONTACT_MAILTO}>
+                      <Mail className="mr-2 w-5 h-5" />
+                      Email Us
+                    </a>
+                  </Button>
+                  <Button asChild size="lg" variant="outline">
+                    <a href="tel:+15107861683">
+                      <Phone className="mr-2 w-5 h-5" />
+                      (510) 786-1683
+                    </a>
                   </Button>
                 </div>
-              ) : (
-                <div className="p-8 bg-card rounded-2xl border border-border">
-                  <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <Label htmlFor="name">Your Name *</Label>
-                        <Input id="name" name="name" placeholder="John Smith" required />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="email">Email Address *</Label>
-                        <Input id="email" name="email" type="email" placeholder="john@company.com" required />
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="company">Company Name</Label>
-                      <Input id="company" name="company" placeholder="Your Company" />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">Phone Number</Label>
-                      <Input id="phone" name="phone" type="tel" placeholder="(510) 786-1683" />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="subject">Subject *</Label>
-                      <Input id="subject" name="subject" placeholder="What's this about?" required />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="message">Message *</Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        placeholder="How can we help you?"
-                        rows={5}
-                        required
-                      />
-                    </div>
-
-                    {/* Honeypot field - hidden from real users */}
-                    <div className="absolute -left-[9999px]" aria-hidden="true">
-                      <Label htmlFor="website">Website</Label>
-                      <Input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
-                    </div>
-
-                    <Button type="submit" size="lg" disabled={isLoading} className="w-full bg-gradient-secondary hover:opacity-90 text-secondary-foreground font-semibold">
-                      {isLoading ? (
-                        <>
-                          <Loader2 className="mr-2 w-5 h-5 animate-spin" />
-                          Sending...
-                        </>
-                      ) : (
-                        <>
-                          Send Message
-                          <Send className="ml-2 w-5 h-5" />
-                        </>
-                      )}
-                    </Button>
-                  </form>
-                </div>
-              )}
+                <p className="text-sm text-muted-foreground mt-6">
+                  Or reach us directly at{" "}
+                  <a href={CONTACT_MAILTO} className="text-primary hover:underline">
+                    karan@humpaldesign.com
+                  </a>
+                </p>
+              </div>
             </motion.div>
+
           </div>
         </div>
       </section>
