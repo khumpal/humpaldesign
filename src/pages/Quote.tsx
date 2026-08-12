@@ -1,98 +1,12 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { Upload, Send, CheckCircle, Loader2 } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Layout from "@/components/layout/Layout";
-import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+
+const QUOTE_MAILTO =
+  "mailto:karan@humpaldesign.com?subject=Quote%20Request";
 
 const Quote = () => {
-  const { toast } = useToast();
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [material, setMaterial] = useState("");
-  const [tolerance, setTolerance] = useState("");
-  const [timeline, setTimeline] = useState("");
-  const [finish, setFinish] = useState("");
-  const [formLoadTime] = useState(Date.now());
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsLoading(true);
-
-    const formData = new FormData(e.currentTarget);
-    const data = {
-      type: "quote" as const,
-      name: formData.get("name") as string,
-      email: formData.get("email") as string,
-      company: formData.get("company") as string,
-      phone: formData.get("phone") as string,
-      quantity: formData.get("quantity") as string,
-      material,
-      tolerance,
-      timeline,
-      finish,
-      description: formData.get("description") as string,
-      // Honeypot fields for bot detection
-      website: formData.get("website") as string,
-      _formTime: formLoadTime,
-    };
-
-    try {
-      const { error } = await supabase.functions.invoke("send-contact-email", {
-        body: data,
-      });
-
-      if (error) throw error;
-
-      setIsSubmitted(true);
-      toast({
-        title: "Quote Request Submitted",
-        description: "We'll get back to you within 24 hours with a detailed quote.",
-      });
-    } catch (error: any) {
-      console.error("Error sending quote request:", error);
-      toast({
-        title: "Error",
-        description: "Failed to submit quote request. Please try again or call us directly.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  if (isSubmitted) {
-    return (
-      <Layout>
-        <section className="py-32">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="max-w-xl mx-auto text-center"
-            >
-              <div className="w-20 h-20 mx-auto bg-green-500/10 rounded-full flex items-center justify-center mb-8">
-                <CheckCircle className="w-10 h-10 text-green-500" />
-              </div>
-              <h1 className="text-4xl font-bold mb-4">Quote Request Received!</h1>
-              <p className="text-muted-foreground text-lg mb-8">
-                Thank you for your interest. Our team will review your project details and get back to you within 24 hours with a detailed quote.
-              </p>
-              <Button onClick={() => setIsSubmitted(false)} variant="outline">
-                Submit Another Request
-              </Button>
-            </motion.div>
-          </div>
-        </section>
-      </Layout>
-    );
-  }
-
   return (
     <Layout>
       {/* Hero Section */}
